@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="13850036-983d-442f-8a85-984129fdcf48" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee.iml" afterDir="false" />
+    <list default="true" id="13850036-983d-442f-8a85-984129fdcf48" name="Changes" comment="Architecture">
+      <change afterPath="$PROJECT_DIR$/src/controlleur/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controlleur/KeyListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controlleur/MouseListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Case.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/WorldMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vue/Camera.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vue/Vue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+    <list id="c70bac54-bb0b-4860-91b7-3eca6a43330d" name="Changes by Mathi" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,6 +45,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -41,8 +62,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1638191851231</updated>
-      <workItem from="1638191853800" duration="39000" />
+      <workItem from="1638191853800" duration="2450000" />
     </task>
+    <task id="LOCAL-00001" summary="Architecture">
+      <created>1638191918442</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638191918442</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -61,5 +90,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Architecture" />
+    <option name="LAST_COMMIT_MESSAGE" value="Architecture" />
   </component>
 </project>
