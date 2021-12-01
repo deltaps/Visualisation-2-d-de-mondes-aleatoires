@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13850036-983d-442f-8a85-984129fdcf48" name="Changes" comment="Architecture">
-      <change afterPath="$PROJECT_DIR$/src/controlleur/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controlleur/KeyListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controlleur/MouseListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Case.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/WorldMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vue/Camera.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vue/Vue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="13850036-983d-442f-8a85-984129fdcf48" name="Changes" comment="Ajout class vide">
+      <change afterPath="$PROJECT_DIR$/src/model/Noise.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
-    <list id="c70bac54-bb0b-4860-91b7-3eca6a43330d" name="Changes by Mathi" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +54,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1638191851231</updated>
-      <workItem from="1638191853800" duration="2450000" />
+      <workItem from="1638191853800" duration="2869000" />
+      <workItem from="1638269831314" duration="11000" />
+      <workItem from="1638270734072" duration="7000" />
+      <workItem from="1638270811103" duration="7000" />
+      <workItem from="1638363289089" duration="1474000" />
     </task>
     <task id="LOCAL-00001" summary="Architecture">
       <created>1638191918442</created>
@@ -71,7 +67,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638191918442</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Ajout class vide">
+      <created>1638197489581</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1638197489581</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Ajout class vide">
+      <created>1638197509555</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1638197509555</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,10 +97,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Architecture" />
-    <option name="LAST_COMMIT_MESSAGE" value="Architecture" />
+    <MESSAGE value="Ajout class vide" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout class vide" />
   </component>
 </project>
