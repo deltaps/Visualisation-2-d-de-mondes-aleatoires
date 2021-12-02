@@ -17,6 +17,6 @@ public class TopCamera extends JPanel implements CameraStrategy {
 
     @Override
     public void paintComponent(Graphics g) {
-
+        super.paintComponent(g);
     }
 }
