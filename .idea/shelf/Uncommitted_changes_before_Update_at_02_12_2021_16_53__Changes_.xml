@@ -1,0 +1,49 @@
+<changelist name="Uncommitted_changes_before_Update_at_02_12_2021_16_53_[Changes]" date="1638460429028" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2021_16_53_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 02/12/2021 16:53 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="build/model/Noise.class" />
+    <option name="AFTER_PATH" value="build/model/Noise.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2021_16_53_[Changes]/Noise.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/controlleur/Controller.class" />
+    <option name="AFTER_PATH" value="build/controlleur/Controller.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2021_16_53_[Changes]/Controller.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/lanceur/AffichageTerminal.class" />
+    <option name="AFTER_PATH" value="build/lanceur/AffichageTerminal.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2021_16_53_[Changes]/AffichageTerminal.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/model/Case.class" />
+    <option name="AFTER_PATH" value="build/model/Case.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2021_16_53_[Changes]/Case.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/model/WorldMap.class" />
+    <option name="AFTER_PATH" value="build/model/WorldMap.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2021_16_53_[Changes]/WorldMap.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/vue/Vue.class" />
+    <option name="AFTER_PATH" value="build/vue/Vue.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2021_16_53_[Changes]/Vue.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/model/PredefinedWorldMap.class" />
+    <option name="AFTER_PATH" value="build/model/PredefinedWorldMap.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2021_16_53_[Changes]/PredefinedWorldMap.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/lanceur/Lanceur.class" />
+    <option name="AFTER_PATH" value="build/lanceur/Lanceur.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2021_16_53_[Changes]/Lanceur.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="dist/ProjetAnnuel.jar" />
+    <option name="AFTER_PATH" value="dist/ProjetAnnuel.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2021_16_53_[Changes]/ProjetAnnuel.jar" />
+  </binary>
+</changelist>
