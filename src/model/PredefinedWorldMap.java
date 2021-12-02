@@ -1,6 +1,6 @@
 package model;
 
-public class PredefinedWorldMap implements Strategy{
+public class PredefinedWorldMap implements MapStrategy {
 
     @Override
     public Case[][] creationWorldMap() {

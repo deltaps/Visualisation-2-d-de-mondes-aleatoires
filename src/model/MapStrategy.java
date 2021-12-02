@@ -1,5 +1,5 @@
 package model;
 
-public interface Strategy {
+public interface MapStrategy {
     public Case[][] creationWorldMap();
 }

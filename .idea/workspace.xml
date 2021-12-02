@@ -5,16 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13850036-983d-442f-8a85-984129fdcf48" name="Changes" comment="Clear">
+      <change afterPath="$PROJECT_DIR$/src/controlleur/Keyboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controlleur/Mouse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/MapStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vue/CameraStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vue/TopCamera.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vue/UserCamera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/Case.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/Case.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/Noise.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/Noise.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/PredefinedWorldMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/PredefinedWorldMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Case.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Case.java" afterDir="false" />
-    </list>
-    <list id="6b1e87c0-155a-46af-b219-7d2efcbd1a27" name="Changes by NON" comment="Changes by Aurélien">
-      <change beforePath="$PROJECT_DIR$/src/model/Noise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Noise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlleur/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlleur/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlleur/KeyListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlleur/MouseListener.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/PredefinedWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PredefinedWorldMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Strategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/WorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/WorldMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/Camera.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/Vue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/Vue.java" afterDir="false" />
     </list>
+    <list id="6b1e87c0-155a-46af-b219-7d2efcbd1a27" name="Changes by NON" comment="Changes by Aurélien" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,6 +96,7 @@
       <workItem from="1638363289089" duration="2365000" />
       <workItem from="1638437966425" duration="6703000" />
       <workItem from="1638446456527" duration="1010000" />
+      <workItem from="1638451619836" duration="2864000" />
     </task>
     <task id="LOCAL-00001" summary="Architecture">
       <created>1638191918442</created>
