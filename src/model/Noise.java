@@ -82,6 +82,10 @@ public class Noise {
         }
         return ret;
     }
+
+    public float[][] getGrid_() {
+        return grid_;
+    }
     /** For testing */
     /*
     public static void main(String[] args) {

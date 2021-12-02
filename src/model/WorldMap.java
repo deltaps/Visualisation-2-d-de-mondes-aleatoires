@@ -9,5 +9,15 @@ public class WorldMap {
     // Liste de Case
     // Génération aléatoire de monde
     private Case[][] worldMap;
+    private Strategy creationMap;
+
+    public WorldMap(Strategy creationMap){
+        this.creationMap = creationMap;
+        this.worldMap = this.creationMap.creationWorldMap();
+    }
+
+    public Case[][] getWorldMap() {
+        return worldMap;
+    }
 }
     
