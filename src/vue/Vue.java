@@ -1,7 +1,6 @@
 package vue;
 
 import controlleur.Controller;
-import model.MapStrategy;
 import model.WorldMap;
 
 import javax.swing.*;
@@ -13,9 +12,9 @@ import java.awt.*;
 public class Vue extends JFrame {
 
     private WorldMap map;
-    protected TopCamera camera;
+    protected CameraStrategy camera;
 
-    public Vue(WorldMap map, TopCamera camera, Controller controller) {
+    public Vue(WorldMap map, CameraStrategy camera, Controller controller) {
 
         this.map = map;
         this.camera = camera;
@@ -32,7 +31,7 @@ public class Vue extends JFrame {
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 
-        contentPane.add(this.camera, BorderLayout.CENTER);
+        contentPane.add((Component) this.camera, BorderLayout.CENTER);
 
         setContentPane(contentPane);
         pack();
