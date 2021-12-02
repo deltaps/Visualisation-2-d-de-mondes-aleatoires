@@ -3,6 +3,8 @@ package controlleur;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+// Ecouteur de la souris.
+
 public class Mouse extends MouseAdapter {
 
     private Controller controller;

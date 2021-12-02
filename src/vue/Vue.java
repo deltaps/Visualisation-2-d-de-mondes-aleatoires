@@ -11,6 +11,8 @@ import java.awt.*;
 // RayCasting: Voir voxel space
 public class Vue extends JFrame {
 
+    // Classe représentant la fenêtre principale, prend un WorldMap, une CameraStrategy (pour le pattern Strategy) et le controller pour plus tard.
+
     private WorldMap map;
     protected CameraStrategy camera;
 

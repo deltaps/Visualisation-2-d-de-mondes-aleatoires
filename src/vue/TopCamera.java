@@ -6,6 +6,9 @@ import model.WorldMap;
 import javax.swing.*;
 import java.awt.*;
 
+// Caméra en vue de dessus. Pour l'instant avec des nuances de gris en noir et blanc.
+// S'adapte à la taille de la map.
+
 public class TopCamera extends JPanel implements CameraStrategy {
 
     private Case[][] map;

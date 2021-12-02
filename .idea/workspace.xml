@@ -4,18 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13850036-983d-442f-8a85-984129fdcf48" name="Changes" comment="Bases du prototype 1.">
+    <list default="true" id="13850036-983d-442f-8a85-984129fdcf48" name="Changes" comment="Bases du prototype 1 (2).">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/PredefinedWorldMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/PredefinedWorldMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Keyboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Keyboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Mouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Mouse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/TopCamera.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/TopCamera.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/UserCamera.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/UserCamera.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/Vue.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/Vue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlleur/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlleur/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlleur/Keyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlleur/Keyboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlleur/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlleur/Mouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/CameraStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/CameraStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vue/TopCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/TopCamera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/UserCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/UserCamera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vue/Vue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/Vue.java" afterDir="false" />
     </list>
     <list id="6b1e87c0-155a-46af-b219-7d2efcbd1a27" name="Changes by NON" comment="Changes by Aurélien" />
-    <list id="d1b1ea97-521c-49fd-9920-2aed89d04f17" name="Changes by sacha" comment="">
-      <change beforePath="$PROJECT_DIR$/src/model/PredefinedWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PredefinedWorldMap.java" afterDir="false" />
-    </list>
+    <list id="d1b1ea97-521c-49fd-9920-2aed89d04f17" name="Changes by sacha" comment="Changes by sacha" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +96,7 @@
       <workItem from="1638363289089" duration="2365000" />
       <workItem from="1638437966425" duration="6703000" />
       <workItem from="1638446456527" duration="1010000" />
-      <workItem from="1638451619836" duration="7334000" />
+      <workItem from="1638451619836" duration="8538000" />
     </task>
     <task id="LOCAL-00001" summary="Architecture">
       <created>1638191918442</created>
@@ -176,7 +182,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638458266691</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Bases du prototype 1 (2).">
+      <created>1638459222193</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1638459222193</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Changes by sacha">
+      <created>1638459233430</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1638459233430</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +229,8 @@
     <MESSAGE value="Bases de la vue (2)." />
     <MESSAGE value="Bases de la vue (3)." />
     <MESSAGE value="Bases du prototype 1." />
-    <option name="LAST_COMMIT_MESSAGE" value="Bases du prototype 1." />
+    <MESSAGE value="Bases du prototype 1 (2)." />
+    <MESSAGE value="Changes by sacha" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by sacha" />
   </component>
 </project>
