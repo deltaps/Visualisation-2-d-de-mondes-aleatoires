@@ -4,21 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13850036-983d-442f-8a85-984129fdcf48" name="Changes" comment="Bases de la vue (2).">
+    <list default="true" id="13850036-983d-442f-8a85-984129fdcf48" name="Changes" comment="Bases de la vue (3).">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/KeyListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/MouseListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/lanceur/AffichageTerminal.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/lanceur/AffichageTerminal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/lanceur/Lanceur.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/lanceur/Lanceur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/PredefinedWorldMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/PredefinedWorldMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/Strategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/WorldMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/WorldMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/Camera.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/Vue.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/Vue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlleur/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlleur/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vue/TopCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/TopCamera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vue/UserCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/UserCamera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/Vue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/Vue.java" afterDir="false" />
     </list>
     <list id="6b1e87c0-155a-46af-b219-7d2efcbd1a27" name="Changes by NON" comment="Changes by Aurélien" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +86,7 @@
       <workItem from="1638363289089" duration="2365000" />
       <workItem from="1638437966425" duration="6703000" />
       <workItem from="1638446456527" duration="1010000" />
-      <workItem from="1638451619836" duration="5154000" />
+      <workItem from="1638451619836" duration="6526000" />
     </task>
     <task id="LOCAL-00001" summary="Architecture">
       <created>1638191918442</created>
@@ -167,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638455507261</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Bases de la vue (3).">
+      <created>1638456964427</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1638456964427</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +196,7 @@
     <MESSAGE value="Clear" />
     <MESSAGE value="Bases de la vue." />
     <MESSAGE value="Bases de la vue (2)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Bases de la vue (2)." />
+    <MESSAGE value="Bases de la vue (3)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Bases de la vue (3)." />
   </component>
 </project>

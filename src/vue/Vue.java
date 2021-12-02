@@ -13,9 +13,9 @@ import java.awt.*;
 public class Vue extends JFrame {
 
     private WorldMap map;
-    protected CameraStrategy camera;
+    protected TopCamera camera;
 
-    public Vue(WorldMap map, CameraStrategy camera, Controller controller) {
+    public Vue(WorldMap map, TopCamera camera, Controller controller) {
 
         this.map = map;
         this.camera = camera;
@@ -27,12 +27,12 @@ public class Vue extends JFrame {
 
         setTitle("Visualisation de monde aléatoire");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new Dimension(800,800));
+        setPreferredSize(new Dimension(600,600));
 
         Container contentPane = getContentPane();
-        contentPane.setLayout(null);
+        contentPane.setLayout(new BorderLayout());
 
-        contentPane.add((Component) this.camera);
+        contentPane.add(this.camera, BorderLayout.CENTER);
 
         setContentPane(contentPane);
         pack();
