@@ -23,16 +23,20 @@ public class Noise {
         int xh = grid_.length - 1;
         int yh = grid_[0].length - 1;
 //set the corner points
-        grid_[0][0] = rand_.nextFloat() - 0.5f;
-        grid_[0][yh] = rand_.nextFloat() - 0.5f;
-        grid_[xh][0] = rand_.nextFloat() - 0.5f;
-        grid_[xh][yh] = rand_.nextFloat() - 0.5f;
+        grid_[0][0] = rand_.nextFloat()*128;
+        grid_[0][yh] = rand_.nextFloat()*128;
+        grid_[xh][0] = rand_.nextFloat()*128;
+        grid_[xh][yh] = rand_.nextFloat()*128;
 //generate the fractal
         generate(0, 0, xh, yh);
     }
     //Add a suitable amount of random displacement to a point
     private float roughen(float v, int l, int h) {
-        return v + roughness_ * (float) (rand_.nextGaussian() * (h - l));
+        double oui = rand_.nextGaussian();
+        while(oui > 1 || oui < 1){
+            oui = rand_.nextGaussian();
+        }
+        return Math.abs( v + roughness_ * (float) (oui * (h - l)));
     }
     //generate the fractal
     private void generate(int xl, int yl, int xh, int yh) {
