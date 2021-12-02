@@ -11,10 +11,10 @@ public class Case {
         this.x = x;
         this.y = y;
         if(elevation > 255){
-            throw new IllegalArgumentException("Ne peu pas être supérieur à 255");
+            elevation = 255;
         }
         else if(elevation < 0) {
-            throw new IllegalArgumentException("Ne peu pas être inférieur à 0");
+            elevation = 0;
         }
         this.elevation = elevation;
     }
