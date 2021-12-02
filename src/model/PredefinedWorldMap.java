@@ -5,7 +5,7 @@ public class PredefinedWorldMap implements Strategy{
     @Override
     public Case[][] creationWorldMap() {
         // Roughness <= 128/width+height
-        Noise noise = new Noise(null,3.2f,20,20);
+        Noise noise = new Noise(null,128.0f,20,20);
         noise.initialise();
         float[][] grid = noise.getGrid_();
         Case[][] worldmap = new Case[20][20];

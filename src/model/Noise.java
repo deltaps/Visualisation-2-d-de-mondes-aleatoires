@@ -33,7 +33,7 @@ public class Noise {
     //Add a suitable amount of random displacement to a point
     private float roughen(float v, int l, int h) {
         double oui = rand_.nextGaussian();
-        while(oui > 1 || oui < 1){
+        while(oui > 1 || oui < -1){
             oui = rand_.nextGaussian();
         }
         return Math.abs( v + roughness_ * (float) (oui * (h - l)));
