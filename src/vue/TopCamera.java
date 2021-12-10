@@ -23,7 +23,6 @@ public class TopCamera extends JPanel implements CameraStrategy {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        System.out.println(this.taille);
         for(int x = 0; x < map.length; x++){
             for(int y = 0; y < map[x].length; y++){
                 Case square = map[x][y];

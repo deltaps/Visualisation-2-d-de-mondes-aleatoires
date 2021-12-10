@@ -28,8 +28,12 @@ public class Vue extends JFrame {
 
         setTitle("Visualisation de monde aléatoire");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new Dimension(600,600));
-
+        if(this.camera instanceof TopCamera) {
+            setPreferredSize(new Dimension(600, 600));
+        }
+        else if(this.camera instanceof UserCamera) {
+            setPreferredSize(new Dimension(map.getWorldMap().length*10, map.getWorldMap()[0].length*10));
+        }
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 

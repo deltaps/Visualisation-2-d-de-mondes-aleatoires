@@ -3,6 +3,7 @@ package controlleur;
 import model.PredefinedWorldMap;
 import model.WorldMap;
 import vue.TopCamera;
+import vue.UserCamera;
 import vue.Vue;
 
 public class Controller {
@@ -13,6 +14,6 @@ public class Controller {
 
         WorldMap map = new WorldMap(new PredefinedWorldMap());
 
-        new Vue(map, new TopCamera(map), this);
+        new Vue(map, new UserCamera(map), this);
     }
 }
