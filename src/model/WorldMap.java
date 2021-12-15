@@ -19,4 +19,25 @@ public class WorldMap {
     public Case[][] getWorldMap() {
         return worldMap;
     }
+
+    public Case getCase(int x, int y){
+        while(x >= this.worldMap.length){
+            x -= this.worldMap.length;
+        }
+        while(y >= this.worldMap.length){
+            y -= this.worldMap.length;
+        }
+        while(x < 0){
+            x += this.worldMap.length;
+        }
+        while(y < 0){
+            y += this.worldMap.length;
+        }
+        return this.worldMap[y][x];
+    }
+
+    public int getLength(){
+        return this.worldMap.length;
+    }
+
 }

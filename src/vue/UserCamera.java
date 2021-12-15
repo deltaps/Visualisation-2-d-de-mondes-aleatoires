@@ -6,7 +6,7 @@ import model.WorldMap;
 import javax.swing.*;
 import java.awt.*;
 
-// Caméra avec une vue utilisateur. Pour l'instant vide.
+// Caméra avec une vue utilisateur.
 
 public class UserCamera extends JPanel implements CameraStrategy {
 
@@ -17,19 +17,19 @@ public class UserCamera extends JPanel implements CameraStrategy {
     private int scaleHeight; // Le multiplicateur de hauteur (pour l'affichage)
     private int horizon; // Angle vertical
 
-    private Case[][] map;
+    private WorldMap map;
     private int mapLength;
 
     public UserCamera(WorldMap map) {
-        this.x = 0;
-        this.y = 0;
-        this.distance = 50;
+        this.x = 49;
+        this.y = 49;
+        this.distance = 20;
 
-        this.map = map.getWorldMap();
-        this.height = this.map[this.x][this.y].getElevation() +10;
+        this.map = map;
+        this.height = this.map.getCase(this.x,this.y).getElevation() +10;
         this.scaleHeight = 120;
         this.horizon = 120;
-        this.mapLength = Math.round(600/this.map.length);
+        this.mapLength = Math.round(600/this.map.getLength());
         setBackground(Color.BLUE);
     }
 
@@ -37,34 +37,22 @@ public class UserCamera extends JPanel implements CameraStrategy {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         for(int distanceActu = this.distance; distanceActu != 1; distanceActu--){
-            Point pleft = new Point(-distanceActu + this.x, -distanceActu + this.y);
+            Point pleft = new Point(-distanceActu + this.x, -distanceActu + this.y); // Point le plus a gauche
             Point pright = new Point(distanceActu + this.x,-distanceActu + this.y);
 
-            float dx = (pright.getX() - pleft.getY()) / this.map.length*10;
-
-            for(int i = 0; i <= this.map.length * 10; i++){
-                float heightOnScreen = (this.height - this.map[pleft.getX()][pleft.getY()].getElevation()) / distanceActu * this.scaleHeight + this.horizon;
-                //drawVerticalLine(g,);
+            float dx = (pright.getX() - pleft.getY()) / this.map.getLength()*10; // Ratio du nombre de point
+            for(int i = 0; i < this.map.getLength() * 10; i++){ // on boucle sur la taille de l'écran
+                float heightOnScreen = (this.height - this.map.getCase(Math.round(pleft.getX()),Math.round(pleft.getY())).getElevation()) / distanceActu * this.scaleHeight + this.horizon;
+                int hautteureuru = this.map.getCase(Math.round(pleft.getX()),Math.round(pleft.getY())).getElevation();
+                drawVerticalLine(g, (int) heightOnScreen,i,new Color(hautteureuru,hautteureuru,hautteureuru));
+                pleft.setX(pleft.getX() + dx);
             }
         }
-        /*
-        for(int x = this.x; x < this.distance; x++) {
-            for(int y = this.y; y < this.distance; y++) {
-
-                Case square = this.map[x][y];
-
-                drawVerticalLine(g, square.getElevation(), x, new Color(square.getElevation(), square.getElevation(), square.getElevation()));
-
-            }
-        }
-
-         */
     }
 
     public void drawVerticalLine(Graphics g, int height, int x, Color color) {
         g.setColor(color);
-        for(int h = height; h > 0; h--) {
-            g.fillRect(x*10, h, 10, height);
-        }
+        g.fillRect(x, map.getWorldMap().length*10 - height, 1, height);
     }
+
 }
