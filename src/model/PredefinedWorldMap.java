@@ -5,13 +5,14 @@ public class PredefinedWorldMap implements MapStrategy {
     @Override
     public Case[][] creationWorldMap() {
         // Roughness <= 128/width+height
-        Noise noise = new Noise(null,128.0f,100,100);
+        int size = 40;
+        Noise noise = new Noise(null,128.0f,size,size);
         noise.initialise();
         float[][] grid = noise.getGrid_();
-        Case[][] worldmap = new Case[100][100];
-        for(int i = 0; i < 100; i++){
-            for(int j = 0; j < 100; j++){
-                worldmap[i][j] = new Case(i,j, (int) (grid[i][j]));
+        Case[][] worldmap = new Case[size][size];
+        for(int i = 0; i < size; i++){
+            for(int j = 0; j < size; j++){
+                worldmap[i][j] = new Case((int) (grid[i][j]));
             }
         }
         return worldmap;

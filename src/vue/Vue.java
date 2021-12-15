@@ -15,11 +15,16 @@ public class Vue extends JFrame {
 
     private WorldMap map;
     protected CameraStrategy camera;
+    private int screenWidth;
+    private int screenHeight;
 
     public Vue(WorldMap map, CameraStrategy camera, Controller controller) {
 
         this.map = map;
         this.camera = camera;
+
+        this.screenWidth = 600;
+        this.screenHeight = 600;
 
         this.GUI();
     }
@@ -28,12 +33,14 @@ public class Vue extends JFrame {
 
         setTitle("Visualisation de monde aléatoire");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        if(this.camera instanceof TopCamera) {
+        /*if(this.camera instanceof TopCamera) {
             setPreferredSize(new Dimension(600, 600));
         }
         else if(this.camera instanceof UserCamera) {
             setPreferredSize(new Dimension(map.getWorldMap().length*10, map.getWorldMap()[0].length*10));
-        }
+        }*/
+        setPreferredSize(new Dimension(this.screenWidth, this.screenHeight));
+
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 

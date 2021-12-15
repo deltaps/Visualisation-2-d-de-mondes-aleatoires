@@ -3,13 +3,9 @@ package model;
 public class Case {
     // Représentation d'une case
     // Catégorie de case
-    private int x;
-    private int y;
     private int elevation; // 0 à 255
 
-    public Case(int x, int y, int elevation) {
-        this.x = x;
-        this.y = y;
+    public Case(int elevation) {
         if(elevation > 255){
             elevation = 255;
         }

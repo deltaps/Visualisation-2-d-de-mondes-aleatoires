@@ -1,5 +1,6 @@
 package lanceur;
 
+import controlleur.Controller;
 import model.PredefinedWorldMap;
 import model.WorldMap;
 
@@ -17,5 +18,7 @@ public class AffichageTerminal {
             }
             System.out.println("");
         }
+
+        new Controller();
     }
 }
