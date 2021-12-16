@@ -14,7 +14,7 @@ public class TopCamera extends JPanel implements CameraStrategy {
     private Case[][] map;
     private int taille;
 
-    public TopCamera(WorldMap map) {
+    public TopCamera(WorldMap map) { // Pas besoins de savoir la taille de la map
         this.map = map.getWorldMap();
         this.taille = Math.round(600/this.map.length);
     }

@@ -1,6 +1,5 @@
 package vue;
 
-import model.Case;
 import model.WorldMap;
 
 import javax.swing.*;
@@ -39,25 +38,25 @@ public class UserCamera extends JPanel implements CameraStrategy {
     }
 
     @Override
-    public void paintComponent(Graphics g) {
+    public void paintComponent(Graphics g) { // TODO Implémenté le déplacement d'abord.
         super.paintComponent(g);
         for(int distanceActu = this.distance; distanceActu != 1; distanceActu--){
             Point pleft = new Point(-distanceActu + this.x, -distanceActu + this.y); // Point le plus a gauche
             Point pright = new Point(distanceActu + this.x,-distanceActu + this.y);
 
-            float dx = (pright.getX() - pleft.getY()) / this.screenWidth; // Ratio du nombre de point
+            float dx = (pright.getX() - pleft.getX()) / this.screenWidth; // Ratio du nombre de point
             for(int i = 0; i < this.screenWidth; i++){ // on boucle sur la taille de l'écran
                 float heightOnScreen = (this.height - this.map.getCase(Math.round(pleft.getX()),Math.round(pleft.getY())).getElevation()) / distanceActu * this.scaleHeight + this.horizon;
                 int RGB = this.map.getCase(Math.round(pleft.getX()),Math.round(pleft.getY())).getElevation();
                 drawVerticalLine(g, (int) heightOnScreen, i, new Color(RGB,RGB,RGB));
-                pleft.setX(pleft.getX() + dx);
+                pleft.setX(pleft.getX() + dx); // Problème a régler par rapport au débordement
             }
         }
     }
 
     public void drawVerticalLine(Graphics g, int height, int x, Color color) {
         g.setColor(color);
-        g.fillRect(x, this.screenHeight - height, 1, height);
+        g.fillRect(x, this.screenHeight - height, 1, height); //a voir avec drawline
     }
 
 }

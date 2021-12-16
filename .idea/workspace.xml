@@ -4,23 +4,77 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13850036-983d-442f-8a85-984129fdcf48" name="Changes" comment="Clean">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/TruePredefinedWorldMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2021_14_35__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2021_14_35__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_12_2021_13_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_12_2021_13_16__Changes_.xml" afterDir="false" />
+    <list default="true" id="13850036-983d-442f-8a85-984129fdcf48" name="Changes" comment="Avancé affichage">
+      <change afterPath="$PROJECT_DIR$/dist/doc/model/TruePredefinedWorldMap.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/doc/vue/Point.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/BasicWorldMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/controlleur/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/controlleur/Keyboard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/controlleur/Mouse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lanceur/AffichageTerminal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lanceur/Lanceur.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/model/Case.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/model/MapStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/model/Noise.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/model/PredefinedWorldMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/model/WorldMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/lanceur/AffichageTerminal.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/lanceur/AffichageTerminal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/PredefinedWorldMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/PredefinedWorldMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/lanceur/Lanceur.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/lanceur/Lanceur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/Case.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/Case.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/WorldMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/WorldMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/TopCamera.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/TopCamera.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/UserCamera.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/UserCamera.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/Vue.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/Vue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/vue/CameraStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/vue/Point.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/vue/TopCamera.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/vue/UserCamera.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/vue/Vue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/ProjetAnnuel.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dist/ProjetAnnuel.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/controlleur/Controller.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/controlleur/Controller.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/controlleur/Keyboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/controlleur/Keyboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/controlleur/Mouse.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/controlleur/Mouse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/controlleur/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/controlleur/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/controlleur/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/controlleur/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/index-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/index-all.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/lanceur/AffichageTerminal.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/lanceur/AffichageTerminal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/lanceur/Lanceur.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/lanceur/Lanceur.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/lanceur/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/lanceur/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/lanceur/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/lanceur/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/member-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/model/Case.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/model/Case.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/model/MapStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/model/MapStrategy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/model/Noise.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/model/Noise.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/model/PredefinedWorldMap.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/model/PredefinedWorldMap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/model/WorldMap.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/model/WorldMap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/model/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/model/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/model/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/model/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/overview-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/serialized-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/type-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/vue/CameraStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/vue/CameraStrategy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/vue/TopCamera.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/vue/TopCamera.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/vue/UserCamera.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/vue/UserCamera.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/vue/Vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/vue/Vue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/vue/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/vue/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/vue/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/vue/package-tree.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controlleur/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlleur/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lanceur/AffichageTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lanceur/AffichageTerminal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Case.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Case.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/PredefinedWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PredefinedWorldMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lanceur/Lanceur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lanceur/Lanceur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Noise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Noise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/PredefinedWorldMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/TruePredefinedWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/TruePredefinedWorldMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/WorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/WorldMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/TopCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/TopCamera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vue/UserCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/UserCamera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vue/Vue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/Vue.java" afterDir="false" />
     </list>
     <list id="6b1e87c0-155a-46af-b219-7d2efcbd1a27" name="Changes by NON" comment="Changes by Aurélien" />
     <list id="d1b1ea97-521c-49fd-9920-2aed89d04f17" name="Changes by sacha" comment="" />
@@ -63,11 +117,12 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JAR Application.ProjetAnnuel.jar">
     <configuration name="Lanceur" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lanceur.Lanceur" />
       <module name="visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee" />
@@ -81,8 +136,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProjetAnnuel.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/dist/ProjetAnnuel.jar" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.ProjetAnnuel.jar" />
         <item itemvalue="Application.Lanceur" />
       </list>
     </recent_temporary>
@@ -104,6 +164,7 @@
       <workItem from="1638446456527" duration="1010000" />
       <workItem from="1638451619836" duration="7334000" />
       <workItem from="1639580015582" duration="3642000" />
+      <workItem from="1639656690330" duration="5676000" />
     </task>
     <task id="LOCAL-00001" summary="Architecture">
       <created>1638191918442</created>
@@ -205,7 +266,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

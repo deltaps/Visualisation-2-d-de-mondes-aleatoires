@@ -1,6 +1,6 @@
 package model;
 import java.util.Random;
-public class Noise {
+public class Noise { //TODO pattern strategy de noise
     /** Source of entropy */
     private Random rand_;
     /** Amount of roughness */

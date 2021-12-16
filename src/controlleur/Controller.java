@@ -1,9 +1,7 @@
 package controlleur;
 
-import model.PredefinedWorldMap;
-import model.TruePredefinedWorldMap;
+import model.BasicWorldMap;
 import model.WorldMap;
-import vue.TopCamera;
 import vue.UserCamera;
 import vue.Vue;
 
@@ -13,7 +11,8 @@ public class Controller {
 
     public Controller() {
 
-        WorldMap map = new WorldMap(new PredefinedWorldMap());
+        //WorldMap1 map = new WorldMap1(new PredefinedWorldMap());
+        WorldMap map = new BasicWorldMap(40);
 
         for(int i = 0; i < map.getWorldMap().length; i++){
             for(int j = 0; j < map.getWorldMap().length; j++){
