@@ -122,7 +122,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JAR Application.ProjetAnnuel.jar">
+  <component name="RunManager" selected="Application.Lanceur">
     <configuration name="Lanceur" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lanceur.Lanceur" />
       <module name="visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee" />
@@ -142,8 +142,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.ProjetAnnuel.jar" />
         <item itemvalue="Application.Lanceur" />
+        <item itemvalue="JAR Application.ProjetAnnuel.jar" />
       </list>
     </recent_temporary>
   </component>
