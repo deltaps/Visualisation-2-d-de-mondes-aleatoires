@@ -2,6 +2,7 @@ package controlleur;
 
 import model.BasicWorldMap;
 import model.WorldMap;
+import vue.CameraStrategy;
 import vue.UserCamera;
 import vue.Vue;
 
@@ -21,6 +22,16 @@ public class Controller {
             System.out.println("");
         }
 
-        new Vue(map, new UserCamera(map), this);
+        CameraStrategy camera = new UserCamera(map);
+
+        if(camera instanceof UserCamera) {
+            new Keyboard((UserCamera) camera);
+        }
+
+        new Vue(map, camera, this);
+    }
+
+    public void move(int direction) {
+
     }
 }

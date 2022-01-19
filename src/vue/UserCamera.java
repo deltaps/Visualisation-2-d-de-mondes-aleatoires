@@ -59,4 +59,25 @@ public class UserCamera extends JPanel implements CameraStrategy {
         g.fillRect(x, this.screenHeight - height, 1, height); //a voir avec drawline
     }
 
+    public void moveUser(int direction) {
+        if(direction == 0) {
+            this.y-=1;
+        }
+        else if(direction == 1) {
+            this.x-=1;
+        }
+        else if(direction == 2) {
+            this.y+=1;
+        }
+        else {
+            this.x+=1;
+        }
+        this.height = this.map.getCase(this.x,this.y).getElevation();
+
+        repaint();
+    }
+
+    public void moveCamera(int direction) {
+
+    }
 }
