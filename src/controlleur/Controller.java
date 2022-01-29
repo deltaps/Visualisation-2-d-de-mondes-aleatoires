@@ -2,18 +2,19 @@ package controlleur;
 
 import model.BasicWorldMap;
 import model.WorldMap;
-import vue.CameraStrategy;
-import vue.UserCamera;
-import vue.Vue;
+import vue.*;
 
 public class Controller {
 
-    //Classe qui créer le model et la vue, ne prend pas encore en compte les écouteurs.
+    //Classe qui créer le model et la vue.
+
+    protected CameraStrategy camera;
+    protected WorldMap map;
 
     public Controller() {
 
-        //WorldMap1 map = new WorldMap1(new PredefinedWorldMap());
-        WorldMap map = new BasicWorldMap(40);
+        //this.map = new WorldMap1(new PredefinedWorldMap());
+        this.map = new BasicWorldMap(40);
 
         for(int i = 0; i < map.getWorldMap().length; i++){
             for(int j = 0; j < map.getWorldMap().length; j++){
@@ -22,16 +23,22 @@ public class Controller {
             System.out.println("");
         }
 
-        CameraStrategy camera = new UserCamera(map);
+        new VueOptions(this);
+        //CameraStrategy camera = new UserCamera(map);
 
-        if(camera instanceof UserCamera) {
-            new Keyboard((UserCamera) camera);
+        if(this.camera instanceof UserCamera) {
+            new Keyboard((UserCamera) this.camera);
         }
 
-        new Vue(map, camera, this);
+        new Vue(map, this.camera, this);
     }
 
-    public void move(int direction) {
-
+    public void setCamera(int camera) {
+        if(camera==0) { // Si l'option "Vue par dessus a été choisie"
+            this.camera = new TopCamera(this.map);
+        }
+        else {
+            this.camera = new UserCamera(this.map);
+        }
     }
 }

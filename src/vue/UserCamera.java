@@ -67,6 +67,7 @@ public class UserCamera extends JPanel implements CameraStrategy {
         g.fillRect(x, this.screenHeight - height, 1, height); //a voir avec drawline
     }
 
+    // Fonction pour bouger l'utilisateur en fonction de Keyboard (l'écouteur du clavier)
     public void moveUser(int direction) {
         int angle = (int) Math.round(this.phi * (180/Math.PI));
         if(angle > 45){
@@ -89,6 +90,7 @@ public class UserCamera extends JPanel implements CameraStrategy {
         repaint();
     }
 
+    // Fonction pour bouger la caméra en fonction de Keyboard (l'écouteur du clavier)
     public void moveCamera(int direction) {
         if(direction == 2){//droite
             this.phi -= (Math.PI / 180) * this.sensibiliteRotation;

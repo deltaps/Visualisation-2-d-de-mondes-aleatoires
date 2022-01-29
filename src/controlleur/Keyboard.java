@@ -7,6 +7,17 @@ import java.awt.event.ActionEvent;
 
 // Ecouteur de clavier.
 
+/*
+Nous avons utilisé des InputMap.
+Ici les commandes sont :
+Z : Avancer
+Q : Gauche
+S : Reculer
+D : Droite
+
+Flèche de gauche : Bouger la caméra à gauche
+Flèche de droite : Bouger la caméra à droite
+ */
 public class Keyboard {
 
     protected final UserCamera camera;
@@ -15,28 +26,28 @@ public class Keyboard {
     public Keyboard(UserCamera camera) {
         this.camera = camera;
 
-        InputMap inputMap = this.camera.getInputMap(condition); // Permet de récupérer les InputMap du composant component (ici un JPanel). Les InputMap permettent d'associer des variables à des touches du clavier. La variable condition est un entier qui permet de faire en sorte que les fonctions activés par ce système sont mises en marche seulement si cette fenêtre est ciblée par l'utilisateur.
+        InputMap inputMap = this.camera.getInputMap(condition); // Permet de récupérer les InputMap du composant component (ici un JPanel). Les InputMap permettent d'associer des variables à des touches du clavier. La variable condition est un entier qui permet de faire en sorte que les fonctions activées par ce système sont mises en marche seulement si cette fenêtre est ciblée par l'utilisateur.
         ActionMap actionMap = this.camera.getActionMap(); // Permet de récupérer les ActionMap du composant component (ici un JPanel). Les ActionMap permettent d'associer une fonction à une variable définie par les InputMap.
 
         String z = "Z";
         inputMap.put(KeyStroke.getKeyStroke("Z"), z); // Permet d'associer à la variable arrowU la touche flèche du haut du clavier, définie avec KeyStroke.getKeyStroke("UP").
         String q = "Q";
-        inputMap.put(KeyStroke.getKeyStroke("Q"), q); // Flèche du bas
+        inputMap.put(KeyStroke.getKeyStroke("Q"), q);
         String s = "S";
-        inputMap.put(KeyStroke.getKeyStroke("S"), s); // Flèche de droite
+        inputMap.put(KeyStroke.getKeyStroke("S"), s);
         String d = "D";
-        inputMap.put(KeyStroke.getKeyStroke("D"), d); // Flèche de gauche
+        inputMap.put(KeyStroke.getKeyStroke("D"), d);
 
         String arrowU = "arrowU";
         inputMap.put(KeyStroke.getKeyStroke("UP"), arrowU); // Permet d'associer à la variable arrowU la touche flèche du haut du clavier, définie avec KeyStroke.getKeyStroke("UP").
         String arrowD = "arrowD";
-        inputMap.put(KeyStroke.getKeyStroke("DOWN"), arrowD); // Flèche du bas
+        inputMap.put(KeyStroke.getKeyStroke("DOWN"), arrowD);
         String arrowR = "arrowR";
-        inputMap.put(KeyStroke.getKeyStroke("RIGHT"), arrowR); // Flèche de droite
+        inputMap.put(KeyStroke.getKeyStroke("RIGHT"), arrowR);
         String arrowL = "arrowL";
-        inputMap.put(KeyStroke.getKeyStroke("LEFT"), arrowL); // Flèche de gauche
+        inputMap.put(KeyStroke.getKeyStroke("LEFT"), arrowL);
 
-        actionMap.put(z, new UserAction(this.camera, 0)); // Permet de lancer une action si la touche flèche du haut du clavier est détectée.
+        actionMap.put(z, new UserAction(this.camera, 0)); // Permet de lancer une action si la touche "Z" du clavier est détectée.
         actionMap.put(q, new UserAction(this.camera, 1));
         actionMap.put(s, new UserAction(this.camera, 2));
         actionMap.put(d, new UserAction(this.camera, 3));
@@ -47,7 +58,7 @@ public class Keyboard {
         actionMap.put(arrowL, new CameraAction(this.camera, 3));
     }
 
-
+    // Action qui permet de bouger l'utilisateur.
     private static class UserAction extends AbstractAction {
         UserCamera camera;
         int direction;
@@ -63,7 +74,7 @@ public class Keyboard {
         }
     }
 
-
+    // Action qui permet de bouger la caméra
     private static class CameraAction extends AbstractAction {
         UserCamera camera;
         int direction;
