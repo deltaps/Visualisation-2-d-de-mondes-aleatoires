@@ -4,13 +4,66 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13850036-983d-442f-8a85-984129fdcf48" name="Changes" comment="Avancé affichage">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vue/VueOptions.java" afterDir="false" />
+    <list default="true" id="13850036-983d-442f-8a85-984129fdcf48" name="Changes" comment="Avancement rotation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Keyboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Keyboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlleur/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlleur/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlleur/Keyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlleur/Keyboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/controlleur/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/controlleur/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/controlleur/Keyboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/controlleur/Keyboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/model/TruePredefinedWorldMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Keyboard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Mouse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/lanceur/AffichageTerminal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/lanceur/Lanceur.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/BasicWorldMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/Case.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/MapStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/Noise.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/WorldMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/CameraStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/Point.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/TopCamera.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/UserCamera.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/Vue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/vue/UserCamera.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/vue/UserCamera.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/vue/Vue.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/vue/Vue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/ProjetAnnuel.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dist/ProjetAnnuel.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/controlleur/Controller.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/controlleur/Controller.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/controlleur/Keyboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/controlleur/Keyboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/controlleur/Mouse.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/controlleur/Mouse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/controlleur/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/controlleur/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/controlleur/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/controlleur/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/index-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/index-all.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/jquery-ui.overrides.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/jquery-ui.overrides.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/lanceur/AffichageTerminal.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/lanceur/AffichageTerminal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/lanceur/Lanceur.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/lanceur/Lanceur.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/lanceur/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/lanceur/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/lanceur/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/lanceur/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/legal/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/legal/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/member-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/model/BasicWorldMap.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/model/BasicWorldMap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/model/Case.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/model/Case.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/model/MapStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/model/MapStrategy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/model/Noise.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/model/Noise.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/model/PredefinedWorldMap.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/model/PredefinedWorldMap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/model/WorldMap.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/model/WorldMap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/model/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/model/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/model/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/model/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/overview-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/serialized-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/vue/CameraStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/vue/CameraStrategy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/vue/Point.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/vue/Point.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/vue/TopCamera.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/vue/TopCamera.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/vue/UserCamera.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/vue/UserCamera.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/vue/Vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/vue/Vue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/vue/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/vue/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/doc/vue/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/doc/vue/package-tree.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vue/UserCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/UserCamera.java" afterDir="false" />
     </list>
     <list id="6b1e87c0-155a-46af-b219-7d2efcbd1a27" name="Changes by NON" comment="Changes by Aurélien" />
@@ -113,7 +166,6 @@
       <workItem from="1639656690330" duration="5676000" />
       <workItem from="1642581584048" duration="3490000" />
       <workItem from="1642682934386" duration="6383000" />
-      <workItem from="1643455208151" duration="4431000" />
     </task>
     <task id="LOCAL-00001" summary="Architecture">
       <created>1638191918442</created>
@@ -215,7 +267,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -232,6 +283,7 @@
     <MESSAGE value="Bases de la vue (2)." />
     <MESSAGE value="Bases de la vue (3)." />
     <MESSAGE value="Bases du prototype 1." />
-    <option name="LAST_COMMIT_MESSAGE" value="Bases du prototype 1." />
+    <MESSAGE value="Avancement rotation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Avancement rotation" />
   </component>
 </project>
