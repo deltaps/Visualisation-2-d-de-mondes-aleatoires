@@ -59,7 +59,7 @@ public class UserCamera extends JPanel implements CameraStrategy {
             for(int i = 0; i < this.screenWidth; i++){ // on boucle sur la taille de l'écran
                 float heightOnScreen = (this.height - this.map.getCase(Math.round(pleft.getX()),Math.round(pleft.getY())).getElevation()) / distanceActu * this.scaleHeight + this.horizon;
                 int[] RGB =  new int[]{this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[0], this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[1], this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[2]};
-                drawVerticalLine(g, (int) heightOnScreen, i, new Color(RGB[0],RGB[1],RGB[2]));
+                drawVerticalLine(g, (int) (255-heightOnScreen), i, new Color(RGB[0],RGB[1],RGB[2]));
                 pleft.setX(pleft.getX() + dx); // Problème a régler par rapport au débordement
                 pleft.setY(pleft.getY() + dy);
             }

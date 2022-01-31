@@ -23,11 +23,11 @@ public class ColorMap {
                 else if(elevation <= 160) {
                     colorMap[i][j] = new int[]{(int) Math.round(elevation*0.15), (int) Math.round(elevation*0.6), (int) Math.round(elevation*0.15)};
                 }
-                else if(elevation <= 180) {
-                    colorMap[i][j] = new int[]{120,120,120};
-                }
 
                 else if(elevation <= 225) {
+                    colorMap[i][j] = new int[]{120,120,120};
+                }
+                else {
                     colorMap[i][j] = new int[]{255,255,255};
                 }
             }
