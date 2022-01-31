@@ -14,10 +14,10 @@ public class Noise { //TODO pattern strategy de noise
      * @param width the width of the grid
      * @param height the height of the grid
      */
-    public Noise(Random rand, float roughness, int width, int height) {
+    public Noise(Random rand, float roughness, int width, int height, int seed) {
         roughness_ = roughness / width;
         grid_ = new float[width][height];
-        rand_ = (rand == null) ? new Random() : rand;
+        rand_ = (rand == null) ? new Random(seed) : rand;
     }
     public void initialise() {
         int xh = grid_.length - 1;

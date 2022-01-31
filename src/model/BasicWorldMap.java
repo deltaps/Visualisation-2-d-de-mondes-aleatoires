@@ -1,11 +1,15 @@
 package model;
 
+import java.util.Random;
+
 public class BasicWorldMap implements WorldMap{
     private int size;
     private Case[][] worldMap;
     public BasicWorldMap(int size){
         this.size = size;
-        Noise noise = new Noise(null,128.0f,size,size);
+        Random rand = new Random();
+        int seed = rand.nextInt();
+        Noise noise = new Noise(null,128.0f,size,size, seed);
         noise.initialise();
         float[][] grid = noise.getGrid_();
         Case[][] worldmap = new Case[size][size];
