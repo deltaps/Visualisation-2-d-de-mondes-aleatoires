@@ -1,5 +1,6 @@
 package vue;
 
+import model.ColorMap;
 import model.WorldMap;
 
 import javax.swing.*;
@@ -20,16 +21,18 @@ public class UserCamera extends JPanel implements CameraStrategy {
     protected final double CONVERSIONPI = (Math.PI / 180);
 
     private WorldMap map;
+    private ColorMap colorMap;
 
     private int screenWidth;
     private int screenHeight;
 
-    public UserCamera(WorldMap map) {
+    public UserCamera(WorldMap map, ColorMap colorMap) {
         this.x = 10;
         this.y = 10;
         this.distance = 40;
 
         this.map = map;
+        this.colorMap = colorMap;
         this.height = this.map.getCase(this.x,this.y).getElevation();
         this.scaleHeight = 6.666666f;
         this.horizon = 120;
@@ -55,8 +58,8 @@ public class UserCamera extends JPanel implements CameraStrategy {
             float dy = (pright.getY() - pleft.getY()) / this.screenWidth;
             for(int i = 0; i < this.screenWidth; i++){ // on boucle sur la taille de l'écran
                 float heightOnScreen = (this.height - this.map.getCase(Math.round(pleft.getX()),Math.round(pleft.getY())).getElevation()) / distanceActu * this.scaleHeight + this.horizon;
-                int RGB = this.map.getCase(Math.round(pleft.getX()),Math.round(pleft.getY())).getElevation();
-                drawVerticalLine(g, (int) heightOnScreen, i, new Color(RGB,RGB,RGB));
+                int[] RGB =  new int[]{this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[0], this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[1], this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[2]};
+                drawVerticalLine(g, (int) heightOnScreen, i, new Color(RGB[0],RGB[1],RGB[2]));
                 pleft.setX(pleft.getX() + dx); // Problème a régler par rapport au débordement
                 pleft.setY(pleft.getY() + dy);
             }
