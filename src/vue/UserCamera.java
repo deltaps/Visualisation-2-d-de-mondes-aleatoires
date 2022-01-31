@@ -76,33 +76,26 @@ public class UserCamera extends JPanel implements CameraStrategy {
         int angle = (int) Math.round(this.phi * (180/Math.PI));
         boolean diagonal = false;
         if(angle >= 30 && angle < 60){
-            System.out.println("Angle supérieur à 30 et inférieur a 60");
             diagonal = true;
         }
         else if(angle >= 60 && angle < 120){
-            System.out.println("Angle supérieur à 60 et inférieur a 120");
             direction = (direction + 1) % 4;
         }
         else if(angle >= 120 && angle < 150){
-            System.out.println("Angle supérieur à 120 et inférieur a 150");
             direction = (direction + 1) % 4;
             diagonal = true;
         }
         else if(angle >= 150 && angle < 210){
-            System.out.println("Angle supérieur à 150 et inférieur a 210");
             direction = (direction + 2) % 4;
         }
         else if(angle >= 210 && angle < 240){
-            System.out.println("Angle supérieur à 210 et inférieur a 240");
             direction = (direction + 2) % 4;
             diagonal = true;
         }
         else if(angle >= 240 && angle < 300){
-            System.out.println("Angle supérieur à 240 et inférieur a 300");
             direction = (direction + 3) % 4;
         }
         else if(angle >= 300 && angle < 330){
-            System.out.println("Angle supérieur à 300 et inférieur a 330");
             direction = (direction + 3) % 4;
             diagonal = true;
         }

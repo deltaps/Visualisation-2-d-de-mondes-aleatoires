@@ -1,0 +1,50 @@
+Index: src/model/Noise.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package model;\r\nimport java.util.Random;\r\npublic class Noise { //TODO pattern strategy de noise\r\n    /** Source of entropy */\r\n    private Random rand_;\r\n    /** Amount of roughness */\r\n    float roughness_;\r\n    /** Plasma fractal grid */\r\n    private float[][] grid_;\r\n    /** Generate a noise source based upon the midpoint displacement fractal.\r\n     *\r\n     * @param rand The random number generator\r\n     * @param roughness a roughness parameter\r\n     * @param width the width of the grid\r\n     * @param height the height of the grid\r\n     */\r\n    public Noise(Random rand, float roughness, int width, int height) {\r\n        roughness_ = roughness / width;\r\n        grid_ = new float[width][height];\r\n        rand_ = (rand == null) ? new Random() : rand;\r\n    }\r\n    public void initialise() {\r\n        int xh = grid_.length - 1;\r\n        int yh = grid_[0].length - 1;\r\n//set the corner points\r\n        grid_[0][0] = rand_.nextFloat()*128;\r\n        grid_[0][yh] = rand_.nextFloat()*128;\r\n        grid_[xh][0] = rand_.nextFloat()*128;\r\n        grid_[xh][yh] = rand_.nextFloat()*128;\r\n//generate the fractal\r\n        generate(0, 0, xh, yh);\r\n    }\r\n    //Add a suitable amount of random displacement to a point\r\n    private float roughen(float v, int l, int h) {\r\n        double oui = rand_.nextGaussian();\r\n        while(oui > 1 || oui < -1){\r\n            oui = rand_.nextGaussian();\r\n        }\r\n        return Math.abs( v + roughness_ * (float) (oui * (h - l)));\r\n    }\r\n    //generate the fractal\r\n    private void generate(int xl, int yl, int xh, int yh) {\r\n        int xm = (xl + xh) / 2;\r\n        int ym = (yl + yh) / 2;\r\n        if ((xl == xm) && (yl == ym)) return;\r\n        grid_[xm][yl] = 0.5f * (grid_[xl][yl] + grid_[xh][yl]);\r\n        grid_[xm][yh] = 0.5f * (grid_[xl][yh] + grid_[xh][yh]);\r\n        grid_[xl][ym] = 0.5f * (grid_[xl][yl] + grid_[xl][yh]);\r\n        grid_[xh][ym] = 0.5f * (grid_[xh][yl] + grid_[xh][yh]);\r\n        float v = roughen(0.5f * (grid_[xm][yl] + grid_[xm][yh]), xl + yl, yh\r\n                + xh);\r\n        grid_[xm][ym] = v;\r\n        grid_[xm][yl] = roughen(grid_[xm][yl], xl, xh);\r\n        grid_[xm][yh] = roughen(grid_[xm][yh], xl, xh);\r\n        grid_[xl][ym] = roughen(grid_[xl][ym], yl, yh);\r\n        grid_[xh][ym] = roughen(grid_[xh][ym], yl, yh);\r\n        generate(xl, yl, xm, ym);\r\n        generate(xm, yl, xh, ym);\r\n        generate(xl, ym, xm, yh);\r\n        generate(xm, ym, xh, yh);\r\n    }\r\n    /**\r\n     * Dump out as a CSV\r\n     */\r\n    public void printAsCSV() {\r\n        for(int i = 0;i < grid_.length;i++) {\r\n            for(int j = 0;j < grid_[0].length;j++) {\r\n                System.out.print(grid_[i][j]);\r\n                System.out.print(\",\");\r\n            }\r\n            System.out.println();\r\n        }\r\n    }\r\n    /**\r\n     * Convert to a Boolean array\r\n     * @return the boolean array\r\n     */\r\n    public boolean[][] toBooleans() {\r\n        int w = grid_.length;\r\n        int h = grid_[0].length;\r\n        boolean[][] ret = new boolean[w][h];\r\n        for(int i = 0;i < w;i++) {\r\n            for(int j = 0;j < h;j++) {\r\n                ret[i][j] = grid_[i][j] < 0;\r\n            }\r\n        }\r\n        return ret;\r\n    }\r\n\r\n    public float[][] getGrid_() {\r\n        return grid_;\r\n    }\r\n    /** For testing */\r\n    /*\r\n    public static void main(String[] args) {\r\n        Noise n = new Noise(null, 1.0f, 250, 250);\r\n        n.initialise();\r\n        n.printAsCSV();\r\n    }\r\n    */\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/model/Noise.java b/src/model/Noise.java
+--- a/src/model/Noise.java	(revision 583639fdfaea9514dab1959f6338c303535e0b92)
++++ b/src/model/Noise.java	(date 1643638062380)
+@@ -14,10 +14,10 @@
+      * @param width the width of the grid
+      * @param height the height of the grid
+      */
+-    public Noise(Random rand, float roughness, int width, int height) {
++    public Noise(Random rand, float roughness, int width, int height, int seed) {
+         roughness_ = roughness / width;
+         grid_ = new float[width][height];
+-        rand_ = (rand == null) ? new Random() : rand;
++        rand_ = (rand == null) ? new Random(seed) : rand;
+     }
+     public void initialise() {
+         int xh = grid_.length - 1;
+Index: src/model/BasicWorldMap.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package model;\r\n\r\npublic class BasicWorldMap implements WorldMap{\r\n    private int size;\r\n    private Case[][] worldMap;\r\n    public BasicWorldMap(int size){\r\n        this.size = size;\r\n        Noise noise = new Noise(null,128.0f,size,size);\r\n        noise.initialise();\r\n        float[][] grid = noise.getGrid_();\r\n        Case[][] worldmap = new Case[size][size];\r\n        for(int i = 0; i < size; i++){\r\n            for(int j = 0; j < size; j++){\r\n                worldmap[i][j] = new Case((int) (grid[i][j]));\r\n            }\r\n        }\r\n        this.worldMap = worldmap;\r\n    }\r\n\r\n    @Override\r\n    public Case[][] getWorldMap() {\r\n        return this.worldMap;\r\n    }\r\n\r\n    @Override\r\n    public Case getCase(int x, int y) {\r\n        while(x >= this.worldMap.length){\r\n            x -= this.worldMap.length;\r\n        }\r\n        while(y >= this.worldMap.length){\r\n            y -= this.worldMap.length;\r\n        }\r\n        while(x < 0){\r\n            x += this.worldMap.length;\r\n        }\r\n        while(y < 0){\r\n            y += this.worldMap.length;\r\n        }\r\n        return this.worldMap[y][x]; // TODO Voir avec le modulo\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/model/BasicWorldMap.java b/src/model/BasicWorldMap.java
+--- a/src/model/BasicWorldMap.java	(revision 583639fdfaea9514dab1959f6338c303535e0b92)
++++ b/src/model/BasicWorldMap.java	(date 1643638300512)
+@@ -1,11 +1,15 @@
+ package model;
+ 
++import java.util.Random;
++
+ public class BasicWorldMap implements WorldMap{
+     private int size;
+     private Case[][] worldMap;
+     public BasicWorldMap(int size){
+         this.size = size;
+-        Noise noise = new Noise(null,128.0f,size,size);
++        Random rand = new Random();
++        int seed = rand.nextInt();
++        Noise noise = new Noise(null,128.0f,size,size, seed);
+         noise.initialise();
+         float[][] grid = noise.getGrid_();
+         Case[][] worldmap = new Case[size][size];
