@@ -18,6 +18,7 @@ public class ColorMap {
         colors = new Color[imageHeight][imageWidth];
 
         for(int x = 0; x < imageHeight; x++) {
+            //for(int y = imageWidth-1; y > 0; y--) {
             for(int y = 0; y < imageWidth; y++) {
                 int pixel = Images.colorMapPattern.getRGB(y,x);
                 Color color = new Color(pixel, true);
@@ -29,7 +30,7 @@ public class ColorMap {
         for(int i = 0; i < worldMap.length; i++){
             for(int j = 0; j < worldMap[0].length; j++){
                 int elevation = worldMap[i][j].getElevation();
-                float humidite = 0.8f;
+                float humidite = 0.9f;
 
                 int x = elevation * 100 / 255;
                 int y = Math.round(humidite*imageWidth);
@@ -37,7 +38,7 @@ public class ColorMap {
                 if(y > imageWidth-1) y = imageWidth-1;
 
 
-                this.colorMap[i][j] = colors[x][y];
+                this.colorMap[i][j] = colors[imageHeight - x - 1][y];
 
 
                 /*if(elevation <= 60) {

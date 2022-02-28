@@ -44,7 +44,7 @@ public class UserCamera extends JPanel implements CameraStrategy {
             }
         }
         this.height = max;
-        this.scaleHeight = 6.666666f;
+        this.scaleHeight = 15f;
         this.horizon = 60;
         this.phi = 0;
 
