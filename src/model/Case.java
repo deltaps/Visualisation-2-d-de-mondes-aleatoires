@@ -4,6 +4,7 @@ public class Case {
     // Représentation d'une case
     // Catégorie de case
     private int elevation; // 0 à 255
+    private float humidite;
 
     public Case(int elevation) {
         if(elevation > 255){
@@ -13,6 +14,7 @@ public class Case {
             elevation = 0;
         }
         this.elevation = elevation;
+        this.humidite = 0.9f;
     }
 
     @Override
@@ -23,6 +25,8 @@ public class Case {
     public int getElevation() {
         return elevation;
     }
+
+    public float getHumidite() {return humidite;}
 
     public void setElevation(int elevation) {
         this.elevation = elevation;

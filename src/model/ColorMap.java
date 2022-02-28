@@ -29,10 +29,11 @@ public class ColorMap {
 
         for(int i = 0; i < worldMap.length; i++){
             for(int j = 0; j < worldMap[0].length; j++){
-                int elevation = worldMap[i][j].getElevation();
-                float humidite = 0.9f;
+                float elevation = worldMap[i][j].getElevation(); // SI elevation entre 0 & 1 : enlever le / 255
+                //float humidite = 0.9f;
+                float humidite = worldMap[i][j].getHumidite();
 
-                int x = elevation * 100 / 255;
+                int x = Math.round(elevation * 100 / 255); // <---- ici
                 int y = Math.round(humidite*imageWidth);
                 if(x > imageHeight-1) x = imageHeight-1;
                 if(y > imageWidth-1) y = imageWidth-1;
