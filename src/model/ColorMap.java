@@ -1,18 +1,46 @@
 package model;
 
+import java.awt.*;
+
 public class ColorMap {
 
-    private int[][][] colorMap;
+    private Color[][] colorMap;
+    private Color[][] colors;
 
     public ColorMap(WorldMap map) {
 
         Case[][] worldMap = map.getWorldMap();
-        colorMap = new int[worldMap.length][worldMap[0].length][3];
+
+        colorMap = new Color[worldMap.length][worldMap[0].length];
+
+        int imageHeight = Images.colorMapPattern.getHeight();
+        int imageWidth = Images.colorMapPattern.getWidth();
+        colors = new Color[imageHeight][imageWidth];
+
+        for(int x = 0; x < imageHeight; x++) {
+            for(int y = 0; y < imageWidth; y++) {
+                int pixel = Images.colorMapPattern.getRGB(y,x);
+                Color color = new Color(pixel, true);
+                colors[x][y] = color;
+            }
+        }
+
 
         for(int i = 0; i < worldMap.length; i++){
             for(int j = 0; j < worldMap[0].length; j++){
                 int elevation = worldMap[i][j].getElevation();
-                if(elevation <= 60) {
+                float humidite = 0.8f;
+
+                int x = elevation * 100 / 255;
+                int y = Math.round(humidite*imageWidth);
+                if(x > imageHeight-1) x = imageHeight-1;
+                if(y > imageWidth-1) y = imageWidth-1;
+
+
+                this.colorMap[i][j] = colors[x][y];
+
+
+                /*if(elevation <= 60) {
                     colorMap[i][j] = new int[]{elevation, elevation, elevation};
                 }
 
@@ -29,16 +57,16 @@ public class ColorMap {
                 }
                 else {
                     colorMap[i][j] = new int[]{255,255,255};
-                }
+                }*/
             }
         }
     }
 
-    public int[][][] getWorldMap() {
+    public Color[][] getColorMap() {
         return this.colorMap;
     }
 
-    public int[] getCase(int x, int y) {
+    public Color getColor(int x, int y) {
         while(x >= this.colorMap.length){
             x -= this.colorMap.length;
         }
@@ -51,6 +79,6 @@ public class ColorMap {
         while(y < 0){
             y += this.colorMap.length;
         }
-        return this.colorMap[y][x]; // TODO Voir avec le modulo
+        return this.colorMap[x][y]; // TODO Voir avec le modulo
     }
 }

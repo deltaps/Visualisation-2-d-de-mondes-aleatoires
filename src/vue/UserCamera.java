@@ -57,6 +57,10 @@ public class UserCamera extends JPanel implements CameraStrategy {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setStroke(new BasicStroke(2));
+
         float sinphi = (float)Math.sin(this.phi);
         float cosphi = (float)Math.cos(this.phi);
 
@@ -78,9 +82,12 @@ public class UserCamera extends JPanel implements CameraStrategy {
 
             for(int i = 0; i < this.screenWidth; i++){
                 double heightOnScreen = (this.height - this.map.getCase(Math.round(pleft.getX()),Math.round(pleft.getY())).getElevation()) / z * this.scaleHeight + this.horizon;
-                int[] RGB =  new int[]{this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[0], this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[1], this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[2]};
+
+                //int[] RGB =  new int[]{this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[0], this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[1], this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[2]};
+                Color color = this.colorMap.getColor(Math.round(pleft.getX()), Math.round(pleft.getY()));
+
                 //drawVerticalLine(g, (int) (255-heightOnScreen), i, new Color(RGB[0],RGB[1],RGB[2]));
-                drawVerticalLine(g,(int) (heightOnScreen),ybuffer[i],i,new Color(RGB[0],RGB[1],RGB[2]));
+                drawVerticalLine(g,(int) (heightOnScreen),ybuffer[i],i, color);
                 if(heightOnScreen < ybuffer[i]){
                     ybuffer[i] = heightOnScreen;
                 }

@@ -5,22 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13850036-983d-442f-8a85-984129fdcf48" name="Changes" comment="Nettoyage">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2022_18_00_[Changes]/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2022_18_00_[Changes]/Keyboard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2022_18_00_[Changes]/ProjetAnnuel.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2022_18_00_[Changes]/UserCamera.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2022_18_00_[Changes]/Vue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2022_18_00_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2022_18_00__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_14_56_[Changes]/ProjetAnnuel.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_14_56_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_14_56__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_15_12_[Changes]/ProjetAnnuel.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_15_12_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_15_12_[Changes_by_UTILISATEUR]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_15_12__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_15_12__Changes_by_UTILISATEUR_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/biome-lookup-smooth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Images.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlleur/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlleur/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ColorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ColorMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/TopCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/TopCamera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vue/UserCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/UserCamera.java" afterDir="false" />
     </list>
     <list id="6b1e87c0-155a-46af-b219-7d2efcbd1a27" name="Changes by NON" comment="Changes by Aurélien" />
@@ -126,6 +117,7 @@
       <workItem from="1643587696418" duration="604000" />
       <workItem from="1643627778096" duration="7108000" />
       <workItem from="1644929661023" duration="9464000" />
+      <workItem from="1646063719056" duration="6080000" />
     </task>
     <task id="LOCAL-00001" summary="Architecture">
       <created>1638191918442</created>
@@ -241,6 +233,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -261,5 +254,16 @@
     <MESSAGE value="Seed" />
     <MESSAGE value="Nettoyage" />
     <option name="LAST_COMMIT_MESSAGE" value="Nettoyage" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/model/ColorMap.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
