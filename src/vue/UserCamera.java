@@ -8,10 +8,10 @@ import javax.swing.*;
 import java.awt.*;
 
 // Caméra avec une vue utilisateur.
-
+// TODO mieux faire le déplacement
 public class UserCamera extends JPanel implements CameraStrategy {
 
-    private int x;
+    private int x; // La camera doit avoir un flottan, et faire une mise a l'échelle avec un conversion
     private int y;
     private int distance; // distance d'affichage
     private int height; // Hauteur de la position de la caméra
@@ -30,11 +30,12 @@ public class UserCamera extends JPanel implements CameraStrategy {
     public UserCamera(WorldMap map, ColorMap colorMap) {
         this.x = 10;
         this.y = 10;
-        this.distance = 50;
+        this.distance = 100;
 
         this.map = map;
         this.colorMap = colorMap;
         //this.height = this.map.getCase(this.x,this.y).getElevation();
+        //Horrible mais pour l'instant --------
         int max = 0;
         for(Case[] cases : map.getWorldMap()) {
             for (Case casess : cases) {
@@ -44,7 +45,8 @@ public class UserCamera extends JPanel implements CameraStrategy {
             }
         }
         this.height = max;
-        this.scaleHeight = 15f;
+        //--------------------------------------
+        this.scaleHeight = 26.66666f; //TODO pour changer la différence facteur de mise a l'échelle coéhrent avec l'intervalle de valeur de hauteur
         this.horizon = 60;
         this.phi = 0;
 
@@ -55,12 +57,8 @@ public class UserCamera extends JPanel implements CameraStrategy {
     }
 
     @Override
-    public void paintComponent(Graphics g) {
+    public void paintComponent(Graphics g) { //TODO Pas assez de différence entre les différents niveau d'élévation
         super.paintComponent(g);
-
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.setStroke(new BasicStroke(2));
-
         float sinphi = (float)Math.sin(this.phi);
         float cosphi = (float)Math.cos(this.phi);
 
@@ -82,12 +80,9 @@ public class UserCamera extends JPanel implements CameraStrategy {
 
             for(int i = 0; i < this.screenWidth; i++){
                 double heightOnScreen = (this.height - this.map.getCase(Math.round(pleft.getX()),Math.round(pleft.getY())).getElevation()) / z * this.scaleHeight + this.horizon;
-
-                //int[] RGB =  new int[]{this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[0], this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[1], this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[2]};
-                Color color = this.colorMap.getColor(Math.round(pleft.getX()), Math.round(pleft.getY()));
-
+                int[] RGB =  new int[]{this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[0], this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[1], this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[2]};
                 //drawVerticalLine(g, (int) (255-heightOnScreen), i, new Color(RGB[0],RGB[1],RGB[2]));
-                drawVerticalLine(g,(int) (heightOnScreen),ybuffer[i],i, color);
+                drawVerticalLine(g,(int) (heightOnScreen),ybuffer[i],i,new Color(RGB[0],RGB[1],RGB[2]));
                 if(heightOnScreen < ybuffer[i]){
                     ybuffer[i] = heightOnScreen;
                 }
@@ -114,8 +109,6 @@ public class UserCamera extends JPanel implements CameraStrategy {
                 pleft.setY(pleft.getY() + dy);
             }
         }
-
-
          */
 
     }
