@@ -18,7 +18,7 @@ public class UserCamera extends JPanel implements CameraStrategy {
     private int x = 10;
     private int y = 10;
     private int distance = 50;
-    private int height;
+    private double height;
     private float scaleHeight;
     private int horizon;
     private float phi;
@@ -32,7 +32,7 @@ public class UserCamera extends JPanel implements CameraStrategy {
     public UserCamera(WorldMap map, ColorMap colorMap) {
         this.map = map;
         this.colorMap = colorMap;
-        int max = 0;
+        double max = 0;
         Case[][] var4 = map.getWorldMap();
         int var5 = var4.length;
 
@@ -50,7 +50,7 @@ public class UserCamera extends JPanel implements CameraStrategy {
         }
 
         this.height = max;
-        this.scaleHeight = 15.0F;
+        this.scaleHeight = 300;
         this.horizon = 60;
         this.phi = 0.0F;
         this.screenWidth = 600;

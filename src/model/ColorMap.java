@@ -33,7 +33,7 @@ public class ColorMap {
                 //float humidite = 0.9f;
                 float humidite = worldMap[i][j].getHumidite();
 
-                int x = Math.round(elevation * 100 / 255); // <---- ici
+                int x = Math.round(elevation * imageHeight); // <---- ici
                 int y = Math.round(humidite*imageWidth);
                 if(x > imageHeight-1) x = imageHeight-1;
                 if(y > imageWidth-1) y = imageWidth-1;

@@ -1,5 +1,6 @@
 package controlleur;
 
+import model.AdvanceWorldMap;
 import model.BasicWorldMap;
 import model.ColorMap;
 import model.WorldMap;
@@ -15,14 +16,14 @@ public class Controller {
     public Controller() {
 
         //this.map = new WorldMap1(new PredefinedWorldMap());
-        this.map = new BasicWorldMap(40);
-
-        /*for(int i = 0; i < map.getWorldMap().length; i++){
+        //this.map = new BasicWorldMap(40);
+        this.map = new AdvanceWorldMap(40);
+        for(int i = 0; i < map.getWorldMap().length; i++){
             for(int j = 0; j < map.getWorldMap().length; j++){
                 System.out.print("[" + map.getWorldMap()[i][j] + "] ");
             }
             System.out.println("");
-        }*/
+        }
 
         new VueOptions(this);
 

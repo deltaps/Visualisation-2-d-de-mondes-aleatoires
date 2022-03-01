@@ -5,6 +5,7 @@ import java.util.Random;
 public class BasicWorldMap implements WorldMap{
     private int size;
     private Case[][] worldMap;
+
     public BasicWorldMap(int size){
         this.size = size;
         Random rand = new Random();
