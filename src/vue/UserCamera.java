@@ -1,218 +1,186 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package vue;
 
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import javax.swing.JPanel;
 import model.Case;
 import model.ColorMap;
 import model.WorldMap;
 
-import javax.swing.*;
-import java.awt.*;
-
-// Caméra avec une vue utilisateur.
-// TODO mieux faire le déplacement
 public class UserCamera extends JPanel implements CameraStrategy {
-
-    private int x; // La camera doit avoir un flottan, et faire une mise a l'échelle avec un conversion
-    private int y;
-    private int distance; // distance d'affichage
-    private int height; // Hauteur de la position de la caméra
-    private float scaleHeight; // Le multiplicateur de hauteur (pour l'affichage)
-    private int horizon; // Angle vertical
-    private float phi; // Angle de vue salut
+    private int x = 10;
+    private int y = 10;
+    private int distance = 50;
+    private int height;
+    private float scaleHeight;
+    private int horizon;
+    private float phi;
     private int sensibiliteRotation = 20;
-    protected final double CONVERSIONPI = (Math.PI / 180);
-
+    protected final double CONVERSIONPI = 0.017453292519943295D;
     private WorldMap map;
     private ColorMap colorMap;
-
     private int screenWidth;
     private int screenHeight;
 
     public UserCamera(WorldMap map, ColorMap colorMap) {
-        this.x = 10;
-        this.y = 10;
-        this.distance = 100;
-
         this.map = map;
         this.colorMap = colorMap;
-        //this.height = this.map.getCase(this.x,this.y).getElevation();
-        //Horrible mais pour l'instant --------
         int max = 0;
-        for(Case[] cases : map.getWorldMap()) {
-            for (Case casess : cases) {
+        Case[][] var4 = map.getWorldMap();
+        int var5 = var4.length;
+
+        for(int var6 = 0; var6 < var5; ++var6) {
+            Case[] cases = var4[var6];
+            Case[] var8 = cases;
+            int var9 = cases.length;
+
+            for(int var10 = 0; var10 < var9; ++var10) {
+                Case casess = var8[var10];
                 if (casess.getElevation() > max) {
                     max = casess.getElevation();
                 }
             }
         }
-        this.height = max;
-        //--------------------------------------
-        this.scaleHeight = 26.66666f; //TODO pour changer la différence facteur de mise a l'échelle coéhrent avec l'intervalle de valeur de hauteur
-        this.horizon = 60;
-        this.phi = 0;
 
+        this.height = max;
+        this.scaleHeight = 15.0F;
+        this.horizon = 60;
+        this.phi = 0.0F;
         this.screenWidth = 600;
         this.screenHeight = 600;
-
-        setBackground(new Color(119, 181, 254));
+        this.setBackground(new Color(119, 181, 254));
     }
 
-    @Override
-    public void paintComponent(Graphics g) { //TODO Pas assez de différence entre les différents niveau d'élévation
+    public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        float sinphi = (float)Math.sin(this.phi);
-        float cosphi = (float)Math.cos(this.phi);
+        Graphics2D g2d = (Graphics2D)g;
+        g2d.setStroke(new BasicStroke(2.0F));
+        float sinphi = (float)Math.sin((double)this.phi);
+        float cosphi = (float)Math.cos((double)this.phi);
+        double[] ybuffer = new double[this.screenWidth];
 
-        double[] ybuffer = new double[screenWidth];// Tableau de taille screenHeight contenant que des 0
-
-        for(int i = 0; i < screenWidth; i++){
-            ybuffer[i] = screenHeight;
+        for(int i = 0; i < this.screenWidth; ++i) {
+            ybuffer[i] = (double)this.screenHeight;
         }
 
-        double dz = 1.0;
-        double z = 1.0;
+        double dz = 1.0D;
 
-        while(z < this.distance){
-            Point pleft = new Point((float) ((-cosphi*z - sinphi*z) + this.x), (float) ((sinphi*z - cosphi*z) + this.y)); // Point le plus a gauche
-            Point pright = new Point((float) ((cosphi*z - sinphi*z) + this.x), (float) ((-sinphi*z - cosphi*z) + this.y));
+        for(double z = 1.0D; z < (double)this.distance; dz += 0.2D) {
+            Point pleft = new Point((float)((double)(-cosphi) * z - (double)sinphi * z + (double)this.x), (float)((double)sinphi * z - (double)cosphi * z + (double)this.y));
+            Point pright = new Point((float)((double)cosphi * z - (double)sinphi * z + (double)this.x), (float)((double)(-sinphi) * z - (double)cosphi * z + (double)this.y));
+            float dx = (pright.getX() - pleft.getX()) / (float)this.screenWidth;
+            float dy = (pright.getY() - pleft.getY()) / (float)this.screenWidth;
 
-            float dx = (pright.getX() - pleft.getX()) / this.screenWidth; // Ratio du nombre de point
-            float dy = (pright.getY() - pleft.getY()) / this.screenWidth;
-
-            for(int i = 0; i < this.screenWidth; i++){
-                double heightOnScreen = (this.height - this.map.getCase(Math.round(pleft.getX()),Math.round(pleft.getY())).getElevation()) / z * this.scaleHeight + this.horizon;
-                int[] RGB =  new int[]{this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[0], this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[1], this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[2]};
-                //drawVerticalLine(g, (int) (255-heightOnScreen), i, new Color(RGB[0],RGB[1],RGB[2]));
-                drawVerticalLine(g,(int) (heightOnScreen),ybuffer[i],i,new Color(RGB[0],RGB[1],RGB[2]));
-                if(heightOnScreen < ybuffer[i]){
+            for(int i = 0; i < this.screenWidth; ++i) {
+                double heightOnScreen = (double)(this.height - this.map.getCase(Math.round(pleft.getX()), Math.round(pleft.getY())).getElevation()) / z * (double)this.scaleHeight + (double)this.horizon;
+                Color color = this.colorMap.getColor(Math.round(pleft.getX()), Math.round(pleft.getY()));
+                this.drawVerticalLine(g, (double)((int)heightOnScreen), ybuffer[i], i, color);
+                if (heightOnScreen < ybuffer[i]) {
                     ybuffer[i] = heightOnScreen;
                 }
-                pleft.setX(pleft.getX() + dx); // Problème a régler par rapport au débordement
+
+                pleft.setX(pleft.getX() + dx);
                 pleft.setY(pleft.getY() + dy);
             }
+
             z += dz;
-            dz += 0.2;
         }
 
-        /*
-        for(int distanceActu = this.distance; distanceActu != 1; distanceActu--) {
+    }
 
-            Point pleft = new Point((-cosphi * distanceActu - sinphi * distanceActu) + this.x, (sinphi * distanceActu - cosphi * distanceActu) + this.y); // Point le plus a gauche
-            Point pright = new Point((cosphi * distanceActu - sinphi * distanceActu) + this.x, (-sinphi * distanceActu - cosphi * distanceActu) + this.y);
-
-            float dx = (pright.getX() - pleft.getX()) / this.screenWidth; // Ratio du nombre de point
-            float dy = (pright.getY() - pleft.getY()) / this.screenWidth;
-            for (int i = 0; i < this.screenWidth; i++) { // on boucle sur la taille de l'écran
-                float heightOnScreen = (this.height - this.map.getCase(Math.round(pleft.getX()), Math.round(pleft.getY())).getElevation()) / distanceActu * this.scaleHeight + this.horizon;
-                int[] RGB = new int[]{this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[0], this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[1], this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[2]};
-                drawVerticalLine(g, (int) (heightOnScreen),screenHeight, i, new Color(RGB[0], RGB[1], RGB[2]));
-                pleft.setX(pleft.getX() + dx); // Problème a régler par rapport au débordement
-                pleft.setY(pleft.getY() + dy);
+    public void drawVerticalLine(Graphics g, double heightBottom, double heightTop, int x, Color color) {
+        if (!(heightTop <= heightBottom)) {
+            if (heightTop < 0.0D) {
+                heightTop = 0.0D;
             }
-        }
-         */
 
+            g.setColor(color);
+            g.drawLine(x, (int)Math.floor(heightTop), x, (int)Math.floor(heightBottom));
+        }
     }
 
-    public void drawVerticalLine(Graphics g, double heightBottom,double heightTop, int x, Color color) {
-        if(heightTop <= heightBottom) return;
-        if(heightTop < 0){
-            heightTop = 0;
-        }
-        g.setColor(color);
-        g.drawLine(x, (int) Math.floor(heightTop),x, (int) Math.floor(heightBottom));
-        //g.fillRect(x, this.screenHeight - height, 1, height); //a voir avec drawline
-    }
-
-    // Fonction pour bouger l'utilisateur en fonction de Keyboard (l'écouteur du clavier) et de l'angle de la camera
     public void moveUser(int direction) {
-        int angle = (int) Math.round(this.phi * (180/Math.PI));
+        int angle = (int)Math.round((double)this.phi * 57.29577951308232D);
         boolean diagonal = false;
-        //Dans la suite on vérifie l'angle de la camera, ainsi en fonction de l'angle et de la direction que l'utilisateur à choisie,
-        //on change la position de la camera.
-        if(angle >= 30 && angle < 60){
+        if (angle >= 30 && angle < 60) {
             diagonal = true;
-        }
-        else if(angle >= 60 && angle < 120){
+        } else if (angle >= 60 && angle < 120) {
             direction = (direction + 1) % 4;
-        }
-        else if(angle >= 120 && angle < 150){
+        } else if (angle >= 120 && angle < 150) {
             direction = (direction + 1) % 4;
             diagonal = true;
-        }
-        else if(angle >= 150 && angle < 210){
+        } else if (angle >= 150 && angle < 210) {
             direction = (direction + 2) % 4;
-        }
-        else if(angle >= 210 && angle < 240){
+        } else if (angle >= 210 && angle < 240) {
             direction = (direction + 2) % 4;
             diagonal = true;
-        }
-        else if(angle >= 240 && angle < 300){
+        } else if (angle >= 240 && angle < 300) {
             direction = (direction + 3) % 4;
-        }
-        else if(angle >= 300 && angle < 330){
+        } else if (angle >= 300 && angle < 330) {
             direction = (direction + 3) % 4;
             diagonal = true;
         }
-        switch (direction){
-            case 0 :
-                if(diagonal){
-                    this.x -= 1;
-                    this.y -= 1;
-                }
-                else{
-                    this.y -= 1;
+
+        switch(direction) {
+            case 0:
+                if (diagonal) {
+                    --this.x;
+                    --this.y;
+                } else {
+                    --this.y;
                 }
                 break;
             case 1:
-                if(diagonal){
-                    this.x -= 1;
-                    this.y += 1;
+                if (diagonal) {
+                    --this.x;
+                    ++this.y;
+                } else {
+                    --this.x;
                 }
-                else{
-                    this.x -= 1;
-                }
-
                 break;
             case 2:
-                if(diagonal){
-                    this.x += 1;
-                    this.y += 1;
-                }
-                else{
-                    this.y += 1;
+                if (diagonal) {
+                    ++this.x;
+                    ++this.y;
+                } else {
+                    ++this.y;
                 }
                 break;
             case 3:
-                if(diagonal){
-                    this.x += 1;
-                    this.y -= 1;
+                if (diagonal) {
+                    ++this.x;
+                    --this.y;
+                } else {
+                    ++this.x;
                 }
-                else{
-                    this.x += 1;
-                }
-                break;
         }
 
-        //this.height = this.map.getCase(this.x,this.y).getElevation();
-
-        repaint();
+        this.repaint();
     }
 
-    // Fonction pour bouger la caméra en fonction de Keyboard (l'écouteur du clavier)
     public void moveCamera(int direction) {
-        if(direction == 2){//rotation a droite
-            this.phi -= (Math.PI / 180) * this.sensibiliteRotation;
-            if(this.phi < 0){
-                this.phi += (Math.PI / 180) * 360;
+        if (direction == 2) {
+            this.phi = (float)((double)this.phi - 0.017453292519943295D * (double)this.sensibiliteRotation);
+            if (this.phi < 0.0F) {
+                this.phi = (float)((double)this.phi + 6.283185307179586D);
             }
         }
-        if(direction == 3){//rotation a gauche
-            this.phi+= (Math.PI / 180) * this.sensibiliteRotation;
-            if(this.phi > (Math.PI / 180) * 360){
-                this.phi-=(Math.PI / 180) * 360;
+
+        if (direction == 3) {
+            this.phi = (float)((double)this.phi + 0.017453292519943295D * (double)this.sensibiliteRotation);
+            if ((double)this.phi > 6.283185307179586D) {
+                this.phi = (float)((double)this.phi - 6.283185307179586D);
             }
         }
-        System.out.println(Math.round(this.phi * (180/Math.PI)));
-        repaint();
+
+        System.out.println(Math.round((double)this.phi * 57.29577951308232D));
+        this.repaint();
     }
 }
