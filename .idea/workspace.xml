@@ -6,9 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="13850036-983d-442f-8a85-984129fdcf48" name="Changes" comment="Amélioration couleurs.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Keyboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/controlleur/Keyboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/BasicWorldMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/BasicWorldMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/Case.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/Case.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/ColorMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/ColorMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Case.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Case.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ColorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ColorMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/PredefinedWorldMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/model/PredefinedWorldMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/UserCamera.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/visualisation-2-d-de-mondes-aleatoires-pronost-siepka-willenbucher-vallee/vue/UserCamera.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/colorMapPattern.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/colorMapPattern.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlleur/Keyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlleur/Keyboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/UserCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/UserCamera.java" afterDir="false" />
     </list>
     <list id="6b1e87c0-155a-46af-b219-7d2efcbd1a27" name="Changes by NON" comment="Changes by Aurélien" />
     <list id="d1b1ea97-521c-49fd-9920-2aed89d04f17" name="Changes by sacha" comment="" />
@@ -113,7 +120,11 @@
       <workItem from="1643587696418" duration="604000" />
       <workItem from="1643627778096" duration="7108000" />
       <workItem from="1644929661023" duration="9464000" />
-      <workItem from="1646063719056" duration="10074000" />
+      <workItem from="1646063719056" duration="10752000" />
+      <workItem from="1646090448465" duration="1282000" />
+      <workItem from="1646095328318" duration="245000" />
+      <workItem from="1646145265959" duration="2796000" />
+      <workItem from="1646231433400" duration="1554000" />
     </task>
     <task id="LOCAL-00001" summary="Architecture">
       <created>1638191918442</created>
@@ -227,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646074528256</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Amélioration couleurs.">
+      <created>1646075172563</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1646075172563</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

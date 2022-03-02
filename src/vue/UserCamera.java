@@ -186,4 +186,9 @@ public class UserCamera extends JPanel implements CameraStrategy {
         System.out.println(Math.round((double)this.phi * 57.29577951308232D));
         this.repaint();
     }
+
+    public void moveHeight(int direction) {
+        this.height += direction*0.1;
+        this.repaint();
+    }
 }

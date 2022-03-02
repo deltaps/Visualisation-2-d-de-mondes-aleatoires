@@ -47,6 +47,11 @@ public class Keyboard {
         String arrowL = "arrowL";
         inputMap.put(KeyStroke.getKeyStroke("LEFT"), arrowL);
 
+        String a = "A";
+        inputMap.put(KeyStroke.getKeyStroke("A"), a);
+        String e = "E";
+        inputMap.put(KeyStroke.getKeyStroke("E"), e);
+
         actionMap.put(z, new UserAction(this.camera, 0)); // Permet de lancer une action si la touche "Z" du clavier est détectée.
         actionMap.put(q, new UserAction(this.camera, 1));
         actionMap.put(s, new UserAction(this.camera, 2));
@@ -56,6 +61,9 @@ public class Keyboard {
         actionMap.put(arrowD, new CameraAction(this.camera, 1));
         actionMap.put(arrowR, new CameraAction(this.camera, 2));
         actionMap.put(arrowL, new CameraAction(this.camera, 3));
+
+        actionMap.put(a, new HeightAction(this.camera, 1));
+        actionMap.put(e, new HeightAction(this.camera, -1));
     }
 
     // Action qui permet de bouger l'utilisateur.
@@ -87,6 +95,21 @@ public class Keyboard {
         @Override
         public void actionPerformed(ActionEvent e) {
             this.camera.moveCamera(this.direction); // Déplace le joueur sélectionné de la direction this.direction.
+        }
+    }
+
+    private static class HeightAction extends AbstractAction {
+        UserCamera camera;
+        int direction;
+
+        HeightAction(UserCamera camera, int direction) {
+            this.camera = camera;
+            this.direction = direction;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            this.camera.moveHeight(this.direction); // Déplace le joueur sélectionné de la direction this.direction.
         }
     }
 }
