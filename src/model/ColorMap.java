@@ -39,7 +39,7 @@ public class ColorMap {
                 if(y > imageWidth-1) y = imageWidth-1;
 
 
-                this.colorMap[i][j] = colors[imageHeight - x - 1][y];
+                this.colorMap[j][i] = colors[imageHeight - x - 1][y];
 
 
                 /*if(elevation <= 60) {

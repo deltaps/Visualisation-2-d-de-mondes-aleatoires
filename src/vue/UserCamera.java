@@ -15,9 +15,9 @@ import model.ColorMap;
 import model.WorldMap;
 
 public class UserCamera extends JPanel implements CameraStrategy {
-    private int x = 10;
-    private int y = 10;
-    private int distance = 50;
+    private int x;
+    private int y;
+    private int distance = 500;
     private double height;
     private float scaleHeight;
     private int horizon;
@@ -50,12 +50,15 @@ public class UserCamera extends JPanel implements CameraStrategy {
         }
 
         this.height = max;
-        this.scaleHeight = 300;
+        this.scaleHeight = 5000;
         this.horizon = 60;
         this.phi = 0.0F;
         this.screenWidth = 600;
         this.screenHeight = 600;
         this.setBackground(new Color(119, 181, 254));
+
+        this.x = this.map.getWorldMap().length / 2;
+        this.y = this.map.getWorldMap().length / 2; // Pour se placer au milieu de la map
     }
 
     public void paintComponent(Graphics g) {

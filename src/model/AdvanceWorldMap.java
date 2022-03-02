@@ -11,16 +11,24 @@ public class AdvanceWorldMap implements WorldMap{
         this.size = size;
         Random rand = new Random();
         int seed = rand.nextInt();
-        AdvanceNoise noise = new AdvanceNoise(null,128.0f,size,size,seed);
-        noise.initialise();
-        float[][] grid = noise.getGrid_();
-        Case[][] worldmap = new Case[size][size];
-        for(int i = 0; i < size; i++){
-            for(int j = 0; j < size; j++){
-                worldmap[i][j] = new Case(grid[i][j]);
+        AdvanceNoise noise = new AdvanceNoise(seed);
+        noise.SetNoiseType(AdvanceNoise.NoiseType.OpenSimplex2);
+
+        this.worldMap = new Case[this.size][this.size];
+
+        for(int y = 0; y < this.size; y++){
+            for(int x = 0; x < this.size; x++){
+                float elevation = 1 * ((noise.GetNoise(x,y) + 1)/2) + 0.66f * ((noise.GetNoise(2*x,2*y) + 1) / 2) + 0.25f * ((noise.GetNoise(4*x,4*y) + 1) / 2); //Octave
+                elevation = elevation/(1+0.66f+0.25f);
+                elevation = (float) Math.pow(elevation,2);
+                this.worldMap[x][y] = new Case(elevation);
             }
         }
-        this.worldMap = worldmap;
+        for(int y = 0; y < this.size; y++){
+            for(int x = 0; x < this.size; x++){
+                this.worldMap[x][y].setHumidite((noise.GetNoise(x,y) + 1) / 2);
+            }
+        }
     }
     @Override
     public Case[][] getWorldMap() {
