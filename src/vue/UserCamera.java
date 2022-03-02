@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package vue;
 
 import java.awt.BasicStroke;
@@ -47,54 +42,50 @@ public class UserCamera extends JPanel implements CameraStrategy {
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        Graphics2D g2d = (Graphics2D)g;
-        g2d.setStroke(new BasicStroke(1.0F));
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setStroke(new BasicStroke(2));
         float sinphi = (float)Math.sin(this.phi);
         float cosphi = (float)Math.cos(this.phi);
-        double[] ybuffer = new double[this.screenWidth];
-
-        for(int i = 0; i < this.screenWidth; ++i) {
-            ybuffer[i] = this.screenHeight;
+        double[] ybuffer = new double[screenWidth];// Tableau de taille screenHeight contenant que des 0
+        for(int i = 0; i < screenWidth; i++){
+            ybuffer[i] = screenHeight;
         }
-
-        double dz = 1.0D;
-
-        for(double z = 1.0D; z < (double)this.distance; dz += 0.2D) {
-            Point pleft = new Point((float)((double)(-cosphi) * z - (double)sinphi * z + (double)this.x), (float)((double)sinphi * z - (double)cosphi * z + (double)this.y));
-            Point pright = new Point((float)((double)cosphi * z - (double)sinphi * z + (double)this.x), (float)((double)(-sinphi) * z - (double)cosphi * z + (double)this.y));
-            float dx = (pright.getX() - pleft.getX()) / (float)this.screenWidth;
-            float dy = (pright.getY() - pleft.getY()) / (float)this.screenWidth;
-
-            for(int i = 0; i < this.screenWidth; ++i) {
-                double heightOnScreen = (double)(this.height - this.map.getCase(Math.round(pleft.getX()), Math.round(pleft.getY())).getElevation()) / z * (double)this.scaleHeight + (double)this.horizon;
+        double dz = 1.0;
+        double z = 1.0;
+        while(z < this.distance){
+            Point pleft = new Point((float) ((-cosphi*z - sinphi*z) + this.x), (float) ((sinphi*z - cosphi*z) + this.y)); // Point le plus a gauche
+            Point pright = new Point((float) ((cosphi*z - sinphi*z) + this.x), (float) ((-sinphi*z - cosphi*z) + this.y));
+            float dx = (pright.getX() - pleft.getX()) / this.screenWidth; // Ratio du nombre de point
+            float dy = (pright.getY() - pleft.getY()) / this.screenWidth;
+            for(int i = 0; i < this.screenWidth; i++){
+                double heightOnScreen = (this.height - this.map.getCase(Math.round(pleft.getX()),Math.round(pleft.getY())).getElevation()) / z * this.scaleHeight + this.horizon;
+                //int[] RGB =  new int[]{this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[0], this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[1], this.colorMap.getCase(Math.round(pleft.getX()), Math.round(pleft.getY()))[2]};
                 Color color = this.colorMap.getColor(Math.round(pleft.getX()), Math.round(pleft.getY()));
-                this.drawVerticalLine(g, (double)((int)heightOnScreen), ybuffer[i], i, color);
-                if (heightOnScreen < ybuffer[i]) {
+                //drawVerticalLine(g, (int) (255-heightOnScreen), i, new Color(RGB[0],RGB[1],RGB[2]));
+                drawVerticalLine(g,(int) (heightOnScreen),ybuffer[i],i, color);
+                if(heightOnScreen < ybuffer[i]){
                     ybuffer[i] = heightOnScreen;
                 }
-
-                pleft.setX(pleft.getX() + dx);
+                pleft.setX(pleft.getX() + dx); // Problème a régler par rapport au débordement
                 pleft.setY(pleft.getY() + dy);
             }
-
             z += dz;
+            dz += 0.2;
         }
-
     }
 
     public void drawVerticalLine(Graphics g, double heightBottom, double heightTop, int x, Color color) {
-        if (!(heightTop <= heightBottom)) {
-            if (heightTop < 0.0D) {
-                heightTop = 0.0D;
-            }
-
-            g.setColor(color);
-            g.drawLine(x, (int)Math.floor(heightTop), x, (int)Math.floor(heightBottom));
+        if(heightTop <= heightBottom) return;
+        if (heightTop < 0) {
+            heightTop = 0;
         }
+        g.setColor(color);
+        g.drawLine(x, (int)Math.floor(heightTop), x, (int)Math.floor(heightBottom));
+        //g.fillRect(x, this.screenHeight - height, 1, height); //a voir avec drawline
     }
 
     public void moveUser(int direction) {
-        int angle = (int)Math.round((double)this.phi * 57.29577951308232D);
+        int angle = (int) Math.round(this.phi * (180/Math.PI));
         boolean diagonal = false;
         if (angle >= 30 && angle < 60) {
             diagonal = true;
