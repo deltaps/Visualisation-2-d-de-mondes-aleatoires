@@ -15,7 +15,6 @@ public class Controller {
 
     public Controller() {
 
-        //this.map = new WorldMap1(new PredefinedWorldMap());
         //this.map = new BasicWorldMap(40);
         this.map = new AdvanceWorldMap(1024);
         /*
