@@ -12,17 +12,16 @@ import model.WorldMap;
 public class UserCamera extends JPanel implements CameraStrategy {
     private int x;
     private int y;
-    private int distance;
+    private final int distance;
     private double height;
-    private float scaleHeight;
+    private final float scaleHeight;
     private int horizon;
     private float phi;
-    private int sensibiliteRotation = 10;
-    protected final double CONVERSIONPI = 0.017453292519943295D;
-    private WorldMap map;
-    private ColorMap colorMap;
-    private int screenWidth;
-    private int screenHeight;
+    private final int sensibiliteRotation ;
+    private final WorldMap map;
+    private final ColorMap colorMap;
+    private final int screenWidth;
+    private final int screenHeight;
 
     public UserCamera(WorldMap map, ColorMap colorMap) {
         this.map = map;
@@ -31,7 +30,8 @@ public class UserCamera extends JPanel implements CameraStrategy {
         this.scaleHeight = 10000;
         this.distance = 1000;
         this.horizon = 60;
-        this.phi = 0.0F;
+        this.sensibiliteRotation = 10;
+        this.phi = 0;
         this.screenWidth = 600;
         this.screenHeight = 600;
         this.setBackground(new Color(119, 181, 254));
@@ -106,38 +106,31 @@ public class UserCamera extends JPanel implements CameraStrategy {
             diagonal = true;
         }
 
-        switch(direction) {
-            case 0:
+        switch (direction) {
+            case 0 -> {
                 if (diagonal) {
                     --this.x;
-                    --this.y;
-                } else {
-                    --this.y;
                 }
-                break;
-            case 1:
+                --this.y;
+            }
+            case 1 -> {
+                --this.x;
                 if (diagonal) {
-                    --this.x;
-                    ++this.y;
-                } else {
-                    --this.x;
-                }
-                break;
-            case 2:
-                if (diagonal) {
-                    ++this.x;
-                    ++this.y;
-                } else {
                     ++this.y;
                 }
-                break;
-            case 3:
+            }
+            case 2 -> {
                 if (diagonal) {
                     ++this.x;
-                    --this.y;
-                } else {
-                    ++this.x;
                 }
+                ++this.y;
+            }
+            case 3 -> {
+                ++this.x;
+                if (diagonal) {
+                    --this.y;
+                }
+            }
         }
         float actualHeight = this.map.getCase(this.x,this.y).getElevation();
         if(this.height < actualHeight){
