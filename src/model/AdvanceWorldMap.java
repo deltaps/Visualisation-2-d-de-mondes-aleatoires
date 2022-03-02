@@ -18,9 +18,9 @@ public class AdvanceWorldMap implements WorldMap{
 
         for(int y = 0; y < this.size; y++){
             for(int x = 0; x < this.size; x++){
-                float elevation = 1 * ((noise.GetNoise(x,y) + 1)/2) + 0.66f * ((noise.GetNoise(2*x,2*y) + 1) / 2) + 0.25f * ((noise.GetNoise(4*x,4*y) + 1) / 2); //Octave
-                elevation = elevation/(1+0.66f+0.25f);
-                elevation = (float) Math.pow(elevation,2);
+                float elevation = 1 * ((noise.GetNoise(x,y) + 1)/2) + 0.2f * ((noise.GetNoise(3*x,3*y) + 1) / 2) + 0.09f * ((noise.GetNoise(8*x,8*y) + 1) / 2); //Octave
+                elevation = elevation/(1+0.2f+0.09f);
+                elevation = (float) Math.pow(elevation,5);
                 this.worldMap[x][y] = new Case(elevation);
             }
         }

@@ -10,19 +10,19 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
-import model.Case;
+
 import model.ColorMap;
 import model.WorldMap;
 
 public class UserCamera extends JPanel implements CameraStrategy {
     private int x;
     private int y;
-    private int distance = 500;
+    private int distance;
     private double height;
     private float scaleHeight;
     private int horizon;
     private float phi;
-    private int sensibiliteRotation = 20;
+    private int sensibiliteRotation = 10;
     protected final double CONVERSIONPI = 0.017453292519943295D;
     private WorldMap map;
     private ColorMap colorMap;
@@ -32,25 +32,9 @@ public class UserCamera extends JPanel implements CameraStrategy {
     public UserCamera(WorldMap map, ColorMap colorMap) {
         this.map = map;
         this.colorMap = colorMap;
-        double max = 0;
-        Case[][] var4 = map.getWorldMap();
-        int var5 = var4.length;
-
-        for(int var6 = 0; var6 < var5; ++var6) {
-            Case[] cases = var4[var6];
-            Case[] var8 = cases;
-            int var9 = cases.length;
-
-            for(int var10 = 0; var10 < var9; ++var10) {
-                Case casess = var8[var10];
-                if (casess.getElevation() > max) {
-                    max = casess.getElevation();
-                }
-            }
-        }
-
-        this.height = max;
-        this.scaleHeight = 5000;
+        this.height = 1;
+        this.scaleHeight = 10000;
+        this.distance = 1000;
         this.horizon = 60;
         this.phi = 0.0F;
         this.screenWidth = 600;
@@ -64,13 +48,13 @@ public class UserCamera extends JPanel implements CameraStrategy {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D)g;
-        g2d.setStroke(new BasicStroke(2.0F));
-        float sinphi = (float)Math.sin((double)this.phi);
-        float cosphi = (float)Math.cos((double)this.phi);
+        g2d.setStroke(new BasicStroke(1.0F));
+        float sinphi = (float)Math.sin(this.phi);
+        float cosphi = (float)Math.cos(this.phi);
         double[] ybuffer = new double[this.screenWidth];
 
         for(int i = 0; i < this.screenWidth; ++i) {
-            ybuffer[i] = (double)this.screenHeight;
+            ybuffer[i] = this.screenHeight;
         }
 
         double dz = 1.0D;
@@ -164,31 +148,44 @@ public class UserCamera extends JPanel implements CameraStrategy {
                     ++this.x;
                 }
         }
-
+        float actualHeight = this.map.getCase(this.x,this.y).getElevation();
+        if(this.height < actualHeight){
+            this.height = actualHeight;
+        }
         this.repaint();
     }
 
     public void moveCamera(int direction) {
-        if (direction == 2) {
-            this.phi = (float)((double)this.phi - 0.017453292519943295D * (double)this.sensibiliteRotation);
-            if (this.phi < 0.0F) {
-                this.phi = (float)((double)this.phi + 6.283185307179586D);
+        //HORIZON VERTICAL -----------------
+        if(direction == 0){
+            this.horizon+=10;
+        }
+        if(direction == 1){
+            this.horizon-=10;
+        }
+        //ROTATION ----------------------
+        if(direction == 2){//rotation a droite
+            this.phi -= (Math.PI / 180) * this.sensibiliteRotation;
+            if(this.phi < 0){
+                this.phi += (Math.PI / 180) * 360;
             }
         }
-
-        if (direction == 3) {
-            this.phi = (float)((double)this.phi + 0.017453292519943295D * (double)this.sensibiliteRotation);
-            if ((double)this.phi > 6.283185307179586D) {
-                this.phi = (float)((double)this.phi - 6.283185307179586D);
+        if(direction == 3){//rotation a gauche
+            this.phi+= (Math.PI / 180) * this.sensibiliteRotation;
+            if(this.phi > (Math.PI / 180) * 360){
+                this.phi-=(Math.PI / 180) * 360;
             }
         }
-
-        System.out.println(Math.round((double)this.phi * 57.29577951308232D));
-        this.repaint();
+        System.out.println(Math.round(this.phi * (180/Math.PI)));
+        repaint();
     }
 
     public void moveHeight(int direction) {
         this.height += direction*0.1;
+        float actualHeight = this.map.getCase(this.x,this.y).getElevation();
+        if(this.height < actualHeight){
+            this.height = actualHeight;
+        }
         this.repaint();
     }
 }
