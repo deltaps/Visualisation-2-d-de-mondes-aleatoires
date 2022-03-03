@@ -141,10 +141,10 @@ public class UserCamera extends JPanel implements CameraStrategy {
 
     public void moveCamera(int direction) {
         //HORIZON VERTICAL -----------------
-        if(direction == 0){
+        if(direction == 0 && this.horizon < 1200){
             this.horizon+=10;
         }
-        if(direction == 1){
+        if(direction == 1 && this.horizon > -600){
             this.horizon-=10;
         }
         //ROTATION ----------------------
