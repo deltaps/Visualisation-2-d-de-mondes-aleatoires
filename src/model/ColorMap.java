@@ -1,26 +1,28 @@
 package model;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public class ColorMap {
 
     private Color[][] colorMap;
     private Color[][] colors;
 
-    public ColorMap(WorldMap map) {
+    public ColorMap(WorldMap map, int imageIndex) {
 
         Case[][] worldMap = map.getWorldMap();
 
         colorMap = new Color[worldMap.length][worldMap[0].length];
 
-        int imageHeight = Images.colorMapPattern.getHeight();
-        int imageWidth = Images.colorMapPattern.getWidth();
+        BufferedImage image = Images.colorMapPatterns[imageIndex];
+        int imageHeight = image.getHeight();
+        int imageWidth = image.getWidth();
         colors = new Color[imageHeight][imageWidth];
 
         for(int x = 0; x < imageHeight; x++) {
             //for(int y = imageWidth-1; y > 0; y--) {
             for(int y = 0; y < imageWidth; y++) {
-                int pixel = Images.colorMapPattern.getRGB(y,x);
+                int pixel = image.getRGB(y,x);
                 Color color = new Color(pixel, true);
                 colors[x][y] = color;
             }
@@ -29,11 +31,10 @@ public class ColorMap {
 
         for(int i = 0; i < worldMap.length; i++){
             for(int j = 0; j < worldMap[0].length; j++){
-                float elevation = worldMap[i][j].getElevation(); // SI elevation entre 0 & 1 : enlever le / 255
-                //float humidite = 0.9f;
+                float elevation = worldMap[i][j].getElevation();
                 float humidite = worldMap[i][j].getHumidite();
 
-                int x = Math.round(elevation * imageHeight); // <---- ici
+                int x = Math.round(elevation * imageHeight);
                 int y = Math.round(humidite*imageWidth);
                 if(x > imageHeight-1) x = imageHeight-1;
                 if(y > imageWidth-1) y = imageWidth-1;

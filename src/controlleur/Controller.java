@@ -39,10 +39,10 @@ public class Controller {
 
     public void setCamera(int camera) {
         if(camera==0) { // Si l'option "Vue par dessus a été choisie"
-            this.camera = new TopCamera(this.map, new ColorMap(this.map));
+            this.camera = new TopCamera(this.map, new ColorMap(this.map, 0));
         }
         else {
-            this.camera = new UserCamera(this.map, new ColorMap(this.map));
+            this.camera = new UserCamera(this.map, new ColorMap(this.map, 0));
         }
     }
 }
