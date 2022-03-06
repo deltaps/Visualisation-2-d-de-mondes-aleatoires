@@ -7,10 +7,8 @@ public class AdvanceWorldMap implements WorldMap{
     private int size;
     private Case[][] worldMap;
 
-    public AdvanceWorldMap(int size){
+    public AdvanceWorldMap(int size, int seed){
         this.size = size;
-        Random rand = new Random();
-        int seed = rand.nextInt();
         int seed2 = seed;
         AdvanceNoise noise = new AdvanceNoise(seed);
         noise.SetNoiseType(AdvanceNoise.NoiseType.OpenSimplex2);

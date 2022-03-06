@@ -6,6 +6,8 @@ import model.ColorMap;
 import model.WorldMap;
 import vue.*;
 
+import java.util.Random;
+
 public class Controller {
 
     //Classe qui créer le model et la vue.
@@ -16,7 +18,9 @@ public class Controller {
     public Controller() {
 
         //this.map = new BasicWorldMap(40);
-        this.map = new AdvanceWorldMap(1024);
+
+
+        //this.map = new AdvanceWorldMap(1024, rand.nextInt());
         /*
         for(int i = 0; i < map.getWorldMap().length; i++){
             for(int j = 0; j < map.getWorldMap().length; j++){
@@ -34,7 +38,23 @@ public class Controller {
             new Keyboard((UserCamera) this.camera);
         }
 
-        new Vue(map, this.camera, this);
+        new Vue(this.map, this.camera, this);
+    }
+
+    public void createWorldMap(int worldMap, int size, int seed) {
+        if(worldMap == 0) { // Si l'option "AdvanceWorldMap a été choisie
+            if(seed == 0) {
+                Random rand = new Random();
+                this.map = new AdvanceWorldMap(size, rand.nextInt());
+            }
+            else {
+                this.map = new AdvanceWorldMap(size, seed);
+            }
+        }
+
+        else {
+            this.map = new BasicWorldMap(size);
+        }
     }
 
     public void setCamera(int camera) {
