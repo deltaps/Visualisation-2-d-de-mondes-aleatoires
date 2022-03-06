@@ -1,5 +1,6 @@
 package controlleur;
 
+import vue.CameraStrategy;
 import vue.UserCamera;
 
 import javax.swing.*;
@@ -17,13 +18,19 @@ D : Droite
 
 Flèche de gauche : Bouger la caméra à gauche
 Flèche de droite : Bouger la caméra à droite
+Flèche du haut : Bouger la caméra du haut
+Flèche du bas : Bouger la caméra du bas
+
+A : Monter
+E : Descendre
+
  */
 public class Keyboard {
 
-    protected final UserCamera camera;
+    protected final CameraStrategy camera;
     private static final int condition = JComponent.WHEN_IN_FOCUSED_WINDOW;
 
-    public Keyboard(UserCamera camera) {
+    public Keyboard(CameraStrategy camera) {
         this.camera = camera;
 
         InputMap inputMap = this.camera.getInputMap(condition); // Permet de récupérer les InputMap du composant component (ici un JPanel). Les InputMap permettent d'associer des variables à des touches du clavier. La variable condition est un entier qui permet de faire en sorte que les fonctions activées par ce système sont mises en marche seulement si cette fenêtre est ciblée par l'utilisateur.
@@ -68,10 +75,10 @@ public class Keyboard {
 
     // Action qui permet de bouger l'utilisateur.
     private static class UserAction extends AbstractAction {
-        UserCamera camera;
+        CameraStrategy camera;
         int direction;
 
-        UserAction(UserCamera camera, int direction) {
+        UserAction(CameraStrategy camera, int direction) {
             this.camera = camera;
             this.direction = direction;
         }
@@ -84,10 +91,10 @@ public class Keyboard {
 
     // Action qui permet de bouger la caméra
     private static class CameraAction extends AbstractAction {
-        UserCamera camera;
+        CameraStrategy camera;
         int direction;
 
-        CameraAction(UserCamera camera, int direction) {
+        CameraAction(CameraStrategy camera, int direction) {
             this.camera = camera;
             this.direction = direction;
         }
@@ -99,10 +106,10 @@ public class Keyboard {
     }
 
     private static class HeightAction extends AbstractAction {
-        UserCamera camera;
+        CameraStrategy camera;
         int direction;
 
-        HeightAction(UserCamera camera, int direction) {
+        HeightAction(CameraStrategy camera, int direction) {
             this.camera = camera;
             this.direction = direction;
         }

@@ -6,6 +6,7 @@ import model.ColorMap;
 import model.WorldMap;
 import vue.*;
 
+import java.awt.event.WindowEvent;
 import java.util.Random;
 
 public class Controller {
@@ -14,6 +15,8 @@ public class Controller {
 
     protected CameraStrategy camera;
     protected WorldMap map;
+    protected Keyboard keyboard;
+    protected Vue vue;
 
     public Controller() {
 
@@ -33,12 +36,9 @@ public class Controller {
 
         new VueOptions(this);
 
+        this.keyboard = new Keyboard(this.camera);
 
-        if(this.camera instanceof UserCamera) {
-            new Keyboard((UserCamera) this.camera);
-        }
-
-        new Vue(this.map, this.camera, this);
+        this.vue = new Vue(this.map, this.camera, this);
     }
 
     public void createWorldMap(int worldMap, int size, int seed) {
@@ -58,11 +58,17 @@ public class Controller {
     }
 
     public void setCamera(int camera) {
-        if(camera==0) { // Si l'option "Vue par dessus a été choisie"
+        if(camera!=0) { // Si l'option "1ere personne" a été choisie
             this.camera = new TopCamera(this.map, new ColorMap(this.map, 0));
         }
         else {
             this.camera = new UserCamera(this.map, new ColorMap(this.map, 0));
         }
+    }
+
+    public void changeCamera(CameraStrategy camera) {
+        this.keyboard = new Keyboard(camera);
+        this.vue.dispatchEvent(new WindowEvent(this.vue, WindowEvent.WINDOW_CLOSING)); // Ferme cette fenêtre.
+        this.vue = new Vue(this.map, camera, this);
     }
 }

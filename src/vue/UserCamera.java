@@ -4,7 +4,7 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 import model.ColorMap;
 import model.WorldMap;
@@ -19,7 +19,7 @@ public class UserCamera extends JPanel implements CameraStrategy {
     private float phi;
     private final int sensibiliteRotation ;
     private final WorldMap map;
-    private final ColorMap colorMap;
+    private ColorMap colorMap;
     private final int screenWidth;
     private final int screenHeight;
 
@@ -84,6 +84,7 @@ public class UserCamera extends JPanel implements CameraStrategy {
         //g.fillRect(x, this.screenHeight - height, 1, height); //a voir avec drawline
     }
 
+    @Override
     public void moveUser(int direction) {
         int angle = (int) Math.round(this.phi * (180/Math.PI));
         boolean diagonal = false;
@@ -139,6 +140,7 @@ public class UserCamera extends JPanel implements CameraStrategy {
         this.repaint();
     }
 
+    @Override
     public void moveCamera(int direction) {
         //HORIZON VERTICAL -----------------
         if(direction == 0 && this.horizon < 1200){
@@ -164,6 +166,7 @@ public class UserCamera extends JPanel implements CameraStrategy {
         repaint();
     }
 
+    @Override
     public void moveHeight(int direction) {
         this.height += direction*0.1;
         float actualHeight = this.map.getCase(this.x,this.y).getElevation();
@@ -171,5 +174,11 @@ public class UserCamera extends JPanel implements CameraStrategy {
             this.height = actualHeight;
         }
         this.repaint();
+    }
+
+    @Override
+    public void setColorMap(int index) {
+        this.colorMap = new ColorMap(this.map, index);
+        repaint();
     }
 }

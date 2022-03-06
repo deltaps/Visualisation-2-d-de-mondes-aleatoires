@@ -11,6 +11,7 @@ import java.util.Set;
 public class Images {
 
     public static BufferedImage[] colorMapPatterns;
+    public static File[] imagesTab;
 
     public static String DELIMITEUR_LINUX = "/";
     public static String DELIMITEUR_WINDOWS = "\\";
@@ -36,7 +37,7 @@ public class Images {
                     imagesSet.add(file);
                 }
             }
-            File[] imagesTab = new File[imagesSet.size()];
+            imagesTab = new File[imagesSet.size()];
             colorMapPatterns = new BufferedImage[imagesSet.size()];
 
             imagesTab[0]= new File("./images" + delimiteur + "colorMapPattern.png");

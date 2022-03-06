@@ -32,7 +32,7 @@ public class VueOptions extends JFrame {
 
         int size = (int) afficheInputDialogAvecPossibles("Veuillez choisir la taille de la map :", "Sélectionnez une option", possibleSize);
 
-        Object[] optionsCamera = {"Vue par dessus", "Vue 1ere personne"};
+        Object[] optionsCamera = {"Vue 1ere personne", "Vue par dessus"};
         int camera = afficheOptionPaneAvecOptions("Type de caméra ?", "Choisissez une option", optionsCamera);
 
 
