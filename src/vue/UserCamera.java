@@ -28,7 +28,7 @@ public class UserCamera extends JPanel implements CameraStrategy {
         this.colorMap = colorMap;
         this.height = 1;
         this.scaleHeight = 10000;
-        this.distance = 1000;
+        this.distance = 200;
         this.horizon = 60;
         this.sensibiliteRotation = 10;
         this.phi = 0;
@@ -46,6 +46,21 @@ public class UserCamera extends JPanel implements CameraStrategy {
         g2d.setStroke(new BasicStroke(2));
         float sinphi = (float)Math.sin(this.phi);
         float cosphi = (float)Math.cos(this.phi);
+
+        for(int distanceActu = this.distance; distanceActu != 1; distanceActu--){
+            Point pleft = new Point((-cosphi*distanceActu - sinphi*distanceActu) + this.x, (sinphi*distanceActu - cosphi*distanceActu) + this.y); // Point le plus a gauche
+            Point pright = new Point((cosphi*distanceActu - sinphi*distanceActu) + this.x,(-sinphi*distanceActu - cosphi*distanceActu) + this.y);
+            float dx = (pright.getX() - pleft.getX()) / this.screenWidth; // Ratio du nombre de point
+            float dy = (pright.getY() - pleft.getY()) / this.screenWidth;
+            for(int i = 0; i < this.screenWidth; i++){ // on boucle sur la taille de l'écran
+                double heightOnScreen = (this.height - this.map.getCase(Math.round(pleft.getX()),Math.round(pleft.getY())).getElevation()) / distanceActu * this.scaleHeight + this.horizon;
+                Color color = this.colorMap.getColor(Math.round(pleft.getX()), Math.round(pleft.getY()));
+                drawVerticalLine(g, (int) (255-heightOnScreen), i,color);
+                pleft.setX(pleft.getX() + dx); // Problème a régler par rapport au débordement
+                pleft.setY(pleft.getY() + dy);
+            }
+        }
+        /* Version avec plus de performance, mais ne marche pas correctement -----------------------------------------------
         double[] ybuffer = new double[screenWidth];// Tableau de taille screenHeight contenant que des 0
         for(int i = 0; i < screenWidth; i++){
             ybuffer[i] = screenHeight;
@@ -72,8 +87,16 @@ public class UserCamera extends JPanel implements CameraStrategy {
             z += dz;
             dz += 0.2;
         }
+        ------------------------------------------------------------------------------------------------
+        */
     }
 
+    public void drawVerticalLine(Graphics g, int height, int x, Color color) {
+        g.setColor(color);
+        g.fillRect(x, this.screenHeight - height, 1, height); //a voir avec drawline
+    }
+
+    /* Version avec drawline----------------------------------------------
     public void drawVerticalLine(Graphics g, double heightBottom, double heightTop, int x, Color color) {
         if(heightTop <= heightBottom) return;
         if (heightTop < 0) {
@@ -83,6 +106,8 @@ public class UserCamera extends JPanel implements CameraStrategy {
         g.drawLine(x, (int)Math.floor(heightTop), x, (int)Math.floor(heightBottom));
         //g.fillRect(x, this.screenHeight - height, 1, height); //a voir avec drawline
     }
+    ----------------------------------------------------------------------
+    */
 
     @Override
     public void moveUser(int direction) {
@@ -108,30 +133,30 @@ public class UserCamera extends JPanel implements CameraStrategy {
         }
 
         switch (direction) {
-            case 0 -> {
+            case 0:
                 if (diagonal) {
                     --this.x;
                 }
                 --this.y;
-            }
-            case 1 -> {
+                break;
+            case 1:
                 --this.x;
                 if (diagonal) {
                     ++this.y;
                 }
-            }
-            case 2 -> {
+                break;
+            case 2:
                 if (diagonal) {
                     ++this.x;
                 }
                 ++this.y;
-            }
-            case 3 -> {
+                break;
+            case 3:
                 ++this.x;
                 if (diagonal) {
                     --this.y;
                 }
-            }
+                break;
         }
         float actualHeight = this.map.getCase(this.x,this.y).getElevation();
         if(this.height < actualHeight){

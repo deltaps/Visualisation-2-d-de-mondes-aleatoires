@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Random;
-
 public class AdvanceWorldMap implements WorldMap{
 
     private int size;
@@ -22,11 +20,12 @@ public class AdvanceWorldMap implements WorldMap{
                 double e2 = 0.25 * ridgenoise(4 * x, 4 * y,noise) * (e0+e1);
                 double elevation = (e0 + e1 + e2) / (1 + 0.5 + 0.25);
                 this.worldMap[x][y] = new Case((float) elevation);
-                /*
+                /* Ancienne version de la génération aléatoire -----------------------
                 float elevation = 1 * ((noise.GetNoise(x,y) + 1)/2) + 0.2f * ((noise.GetNoise(3*x,3*y) + 1) / 2) + 0.09f * ((noise.GetNoise(8*x,8*y) + 1) / 2); //Octave
                 elevation = elevation/(1+0.2f+0.09f);
                 elevation = (float) Math.pow(elevation,5);
                 this.worldMap[x][y] = new Case(elevation);
+                ------------------------------------------------------------------------
                 */
             }
         }
@@ -66,6 +65,6 @@ public class AdvanceWorldMap implements WorldMap{
         while(y < 0){
             y += this.worldMap.length;
         }
-        return this.worldMap[y][x]; // TODO Voir avec le modulo
+        return this.worldMap[y][x];
     }
 }
