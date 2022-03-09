@@ -39,7 +39,7 @@ public class Vue extends JFrame {
     public void GUI() {
 
         setTitle("Visualisation de monde aléatoire");
-        //setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         setPreferredSize(new Dimension(this.screenWidth, this.screenHeight));
 

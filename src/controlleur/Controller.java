@@ -6,6 +6,7 @@ import model.ColorMap;
 import model.WorldMap;
 import vue.*;
 
+import javax.swing.*;
 import java.awt.event.WindowEvent;
 import java.util.Random;
 
@@ -52,9 +53,9 @@ public class Controller {
             }
         }
 
-        else {
+        /*else {
             this.map = new BasicWorldMap(size);
-        }
+        }*/
     }
 
     public void setCamera(int camera) {
@@ -68,6 +69,7 @@ public class Controller {
 
     public void changeCamera(CameraStrategy camera) {
         this.keyboard = new Keyboard(camera);
+        this.vue.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         this.vue.dispatchEvent(new WindowEvent(this.vue, WindowEvent.WINDOW_CLOSING)); // Ferme cette fenêtre.
         this.vue = new Vue(this.map, camera, this);
     }

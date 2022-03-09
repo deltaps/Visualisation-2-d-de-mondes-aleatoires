@@ -11,11 +11,11 @@ public class VueOptions extends JFrame {
 
     public VueOptions(Controller controller) {
 
-        Object[] optionsWorldMap = {"AdvanceWorldMap (avec seed)", "BasicWorldMap (sans seed)"};
-        int worldMap = afficheOptionPaneAvecOptions("Type de map ?", "Choisissez une option", optionsWorldMap);
+        /*Object[] optionsWorldMap = {"AdvanceWorldMap (avec seed)", "BasicWorldMap (sans seed)"};
+        int worldMap = afficheOptionPaneAvecOptions("Type de map ?", "Choisissez une option", optionsWorldMap);*/
 
         String stringSeed;
-        if(worldMap == 0) {
+        /*if(worldMap == 0) {
             stringSeed = afficheInputDialog("Seed de génération de la map ?\n\nNe mettez que des chiffres.\n\"0\", rien ou alors des lettres\nseront considérés comme une seed aléatoire. ", "Graine ");
             if(stringSeed.isEmpty()) {
                 stringSeed = "0";
@@ -23,11 +23,17 @@ public class VueOptions extends JFrame {
         }
         else {
             stringSeed = "0";
+        }*/
+
+        stringSeed = afficheInputDialog("Seed de génération de la map ?\n\nNe mettez que des chiffres.\n\"0\", rien ou alors des lettres\nseront considérés comme une seed aléatoire. ", "Graine ");
+        if(stringSeed.isEmpty()) {
+            stringSeed = "0";
         }
+
 
         Object[] possibleSize = new Object[100];
         for(int i = 0; i < 100; i++) {
-            possibleSize[i] = i*50+50;
+            possibleSize[i] = i*50+400;
         }
 
         int size = (int) afficheInputDialogAvecPossibles("Veuillez choisir la taille de la map :", "Sélectionnez une option", possibleSize);
@@ -44,7 +50,8 @@ public class VueOptions extends JFrame {
             intSeed = 0;
         }
 
-        controller.createWorldMap(worldMap, size, intSeed);
+        //controller.createWorldMap(worldMap, size, intSeed);
+        controller.createWorldMap(0, size, intSeed);
         controller.setCamera(camera);
 
         dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING)); // Ferme cette fenêtre.
