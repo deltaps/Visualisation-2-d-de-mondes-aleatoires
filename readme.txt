@@ -20,3 +20,11 @@ placer votre bash dans le dossier principal de notre jeu (ou se situe notre fich
 ensuite exécuter ces deux lignes de commande :
 javac −d ./build src/*/*.java
 java −cp ./build lanceur.Lanceur
+
+------------------------------------------------
+Commande:
+
+Les touches Z,Q,S,D permettent respectivement d'avancer, d'aller à gauche, en arrière et à droite
+Les touches A et E permettent d'augmenter, ou de baisser sa hauteur
+Les flèches directionnelles haut et bas permettent de regarder en haut, ou en bas
+Les flèches directionnelles gauche et droite permettent d'effectuer une rotation à gauche, ou à droite.
